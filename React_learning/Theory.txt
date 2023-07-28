@@ -1,0 +1,201 @@
+What is React? 
+ans:- A Javascript library for building user interfaces. 
+Ther user interface (UI) is the point of human-computer interaction and communication in a device. This can include display screens, keyboards, a mouse and the appearance of a desktop.
+
+Is React JS library or Framework?
+React is not a framework. React is a javascript library for building user interfaces.
+
+History of React:-
+React was first designed by Jorden Walke, a software engineer at Facebook
+
+It was first deployed for Facebook News feed around 2011.
+
+In 2013, React was open sourced at JS conference.
+
+
+About React(what is actually React)
+1. Component based approach:- A component is one of the core building block of react. In other words, we can say that every application you will develop in react will be made pieces called components. Components make the task of building UIs much easier. For example:- on webpage if we have same kind of pattern used again and again then we can make a seprate component of it and can reuse it again and again where ever we need and this will save time to rewrite the code again and again.
+
+2. Uses a declarative approach:- (declarative approach is mostly used by frameworks but not libraries but react being a library still uses declarative approach)
+Declarative programming is a programming paradigm..that expresses the logic of a computation without describing its control flow. basically declarative programming is like asking your friend to draw a landscape. you don't care how they draw it, that's up to them. 
+
+3. DOM updates are handled gracefully
+
+4. Reusable code 
+
+5. React is designed for speed, speed of implementing the application simplicity and scalability.
+
+
+Why React?
+Created and Maintained by Facebook.
+It has a huge community on Github
+Component based Architecture.
+
+React JS Environment setup:-
+ 1. Install NodeJs and NPM --->
+  a) To check if node is installed properly or not:-
+  open CMD --> type node -v  --> 
+  b) To check that npm is installed or not :-
+  type npm -v
+
+2. Install Visual Studion code
+
+3. Install React from terminal:-
+ a) npm install -g create-react-app
+ b) To check whether the react app is installed properly or not  :- create-react-app --version
+ c) create-react-app <project name>
+
+
+Package.json file:- This file is very importand when we are working on any react project. 
+* It is used to store the metadata associated with the project as well as to store the list of dependency packages.
+* with the help of this package.json file we can share our project to anyone very easily.
+
+node_Modules folder:- is the repository of modules/library which you are using inside your project. what ever you are importing in your project that modules or library should present inside the node_module folder. When you do npm install that time that module or the library install inside the node_module folder and one entry added in package.json file. All the dependecies of this react app are already installed in this node modules folder.
+
+* when ever we will be working on react we require two module which we can't skip and those are:-
+1. we require react 
+2. we require react dom
+
+we have a render method available with react dom. simple meanign of render is to show (dhikhana). Render Method takes three parameters 1.Kya dikhana hai 
+2. kaha dikhana hai
+3. callback function
+
+To write any HTML element (means kya dikhana hai) we need react module 
+and kaha dikhana hai(means here to show the element on the webpage we need to perform DOM manipulation and for that we need React-dom)
+
+* ReactDom.render(<h1>Hello World!!</h1>, document.getElementById('root'));
+
+<h1>Hello World!!</h1> //this is not html this is JSX
+
+* BABEL :- It is a javascript compiler which converts the modern JS code into a form which can be easily understand by the browser
+
+*JSX:- Javascript extension or javascript xml
+
+<h1>Hello World!!</h1>this expression written here is not a html code but it is a JSX expression.
+
+import React from "react"; we have imported this react module becz without importing it if we want to render something on the browser then it will throw an error becz it's not a html code it's a JSX expression.
+
+Three ways to render something on browser:-
+1. ReactDom.render(<h1>Hello World</h1>, document.getElementById("root"));
+2.ReactDom.render(React.createElement("h1", null, "Hello world"), document.getElementById("root"));
+3.var h1 = document.createElement("h1");
+h1.innerHTML = "Hello World";
+document.getElementById("root").append(h1);
+
+
+* Render Multiple elements in react:-
+there are three ways:-
+1.As render Method in react always take first parameter as What to show on browser and we can only pass one JSx expression at a time to this render method means one opening and closing tag so if we want to render more than one JSX expression then we use Div tag which wraps more than one JSX expression into one.
+ReactDom.render(<div>
+<h1>Hello!!</h1>
+<p>How are You</p>
+</div>, 
+document.getElementById('root')); 
+2. In React V16 it's possible for render method to return an array of elements.
+
+ReactDom.render([
+    <h1>Hello Mister</h1>
+    <p>How are you</p>
+], document.getElementById("root"));
+
+3.React Fragment :- In the above 1 case we were using div to render multiple JSX expression and due to which one div element is also added in along with the other elements but we don't wanted that div so we can use React.Fragment to overcome this extra div being getting added with the root div.
+For example:-
+ReactDom.render(<React.Fragment>
+<h1>Hello Brother</h1>
+<p>Are You fine</p>
+</React.Fragment>, 
+document.getElementById("root"));
+
+NOTE:- Out of all three we should simply use React.
+1.Fragment becz it is little bit faster then div. 
+2.It consumes less memory as compare to div.
+
+A special fragment syntax. react 16.2 also introduced a syntatical sugar for fragments and that is as follow inspite of writting React.Fragment we can use this syntatic sugar form :-
+ReactDom.render(<>
+<h1>Hello Brother</h1>
+<p>Are You fine</p>
+</>, 
+document.getElementById("root"));
+
+
+* More about JSX expression in react:- 
+If we want to use javascript inside a JSX expression then we have to use '{}' curly braces. inside this curly braces we can't use statment i.e ifelse conditions and all we can only use expressions.
+
+const F_Name = "Nandini";
+ReactDom.render(
+    <>
+    <h1>My Name is {F_Name}</h1>
+    <p>My Lucky number is {9+9}</p>
+    </>,
+    document.getElementById("root")
+);
+
+* Template Literals :-If we want to concatinate two variable we can use template literals.
+const F_Name = "Nandini";
+const L_NAME = "Chaudhary";
+ReactDom.render(
+    <>
+    <h1>`{My Name is ${F_Name} ${L_NAME}}`</h1>
+    <p>My Lucky number is {9+9}</p>
+    </>,
+    document.getElementById("root")
+);
+
+
+* JSX Attribute
+JSX attribute are almost same as HTML tags attribute but there are some rules which makes JSX attribute different from HTML attribute:-
+Those Rule are:- 
+1.All the attribute must be written in camelcase 
+2. For those tags in html which don't have closing tag here in JSX we must close them using selfclosing tag example img tag.
+3. In html we use class attribute but here in JSX expression we can't use class becx class is a reserved keyword so here in JSX we use className as a property.
+
+import React from 'react';
+import ReactDom from 'react-dom';
+
+const name = "Nandini";
+const img1 = "https://picsum.photos/200/300";
+const img2 = "https://picsum.photos/250/300";
+const img3 = "https://picsum.photos/300/300";
+const links = "https://picsum.photos/"
+ReactDom.render(
+<>
+  <h1 contentEditable="true">My name is {name}</h1>
+  <img src={img1} alt="RandomImage"/> 
+  <img src={img2} alt="RandomImage"/> 
+  <a href={links}>
+  <img src={img3} alt="RandomImage"/> 
+  </a>
+  </>,
+document.getElementById("root"));
+
+* CSS Styling and importing css files in react JS i.e External css:-
+Firstly we will add a attribute className or id according to our requirement and to style  the paticular JSX expression using className or id we will write the css for it in the css file and we will import that css file in the JS file as follow:-
+
+import React from "react";
+import ReactDom from "react-dom";
+import "./index.css" 
+
+const name = "Nandini";
+const img1 = "https://picsum.photos/200/300";
+const img2 = "https://picsum.photos/250/300";
+const img3 = "https://picsum.photos/300/300";
+const links = "https://picsum.photos/"
+ReactDom.render(
+<>
+  <h1 className="heading">My name is {name}</h1>
+  <div className="img_div">
+  <img src={img1} alt="RandomImage"/> 
+  <img src={img2} alt="RandomImage"/> 
+  <a href={links} target="_blank">
+  <img src={img3} alt="RandomImage"/> 
+  </a>
+  </div>
+  </>,
+document.getElementById("root"));
+
+* Internal CSS and inline css styling in react JS:-
+(In Internal CSS we know that the whole css code is written in the same html age inside the head tag using style tag.
+
+In inline css we know that the css properties are added within the tag itself.)
+
+So today we are going to learn how can we style our pages by using inline and internal css.

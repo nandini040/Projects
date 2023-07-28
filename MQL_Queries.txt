@@ -1,0 +1,5 @@
+ temp query bus * 'yogibear--CMOS040_MEM_ROMHS--MCU_C40LP_ROMHS' * select id
+ expand bus 42404.60972.32638.8228 select bus id;
+  expand bus 42404.60972.49215.40434;
+   print bus 42404.60972.49215.40434 select attribute.value
+ print attribute STMDeliverableStructure select range

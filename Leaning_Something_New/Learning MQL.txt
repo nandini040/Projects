@@ -1,0 +1,53 @@
+Learning MQL
+
+USE of MQL ---> It is basically used for deep customization of the system, such as access control customization through policies definition. 
+
+3DExperience platform is a platform for managing information in any business environment and provides us the flexibility  to organize the information according to your projects, products and business model.As we know that in any business a large volume of documentation and information is produced so that need to be shared and controlled. Sometime it is also possible that data overload problem may occur so this platform hellps us manage , cotrol, improve those overloaded info or document. the heart of this platform is a database that contain the types of product created in your business, and the attributes with those products , and the processes that govern their lifecycle, and that storage is called vaults and used to organize the data within the database.
+
+Data Creation Using MQL
+MQL is used to develop and customize applications. It should not be used for data creation or manipulation
+
+
+Introducing MQL
+#MQL is similar to SQL 
+#It consists of a set of commands that help the administrator set up, build, and test a 3DSpace database.
+#You can also use MQL to add information to the existing database, and extract information.
+
+MQL Modes
+MQL acts an interpreter for 3DSpace 
+There are three modes in MQL  
+1.Interactive Mode-->
+*When we use MQL in interactive mode, we can type only one MQL command at a time and it is processed.
+* This mode is typically used when you have only a few modifications to make or tests to perform.
+*Interactive mode is inefficient for building large databases or to input large amounts of information.
+
+2.Script Mode-->
+*When working in the script (or batch) mode, we make use of text editor to build a set of MQL commands contained in an external file (a script), that can be sent to the command interface.
+*The interface then reads the script, line by line, and processes the commands just as it would in the interactive mode.
+
+3.TCL/Tk Mode-->
+*Tcl (Tool command language) is embedded in MQL, common programming features are available for use with MQL.
+*TCL is an interpreted programming language for controlling and extending MQL.
+*To enter Tcl mode, enter the following in MQL:  -->tcl;
+*The Tcl command exit returns you to native MQL.
+
+
+MQL Scripts
+*Scripts are useful while performing many changes to the 3DSpace database either in the initial building process or when updating an existing database. 
+*MQL scripts provide a written record that you can review. Using a text editor to create the script makes it easy to duplicate similar blocks of definitions or modifications.
+
+Building the System Basics:
+
+1. Vaults:-
+*A vault is a storage location residing in the underlying database that is defined by a System Administrator. 
+*Vaults allow the designer of the database to construct one or more logical storage locations within the database. You must be a System Administrator to access vaults.
+*Vaults contain metadata (information about objects), while stores contain the application files associated with business objects.
+*The Business Administrator determines what the vault is for, while the System Administrator defines where the vault is located on the network.
+
+
+2.Stores:-
+*A store is a storage location for checked-in files.One must be a System Administrator to access stores.
+*These files contain information associated with business objects. A file store simply defines a place where you can find the file like file store for documentation files, problem reports, and so on.
+*A store is used to divide the database for improved performance. A file store provides:
+=>Information about the physical storage location where the file checked in. 
+ 

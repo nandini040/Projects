@@ -1,0 +1,3605 @@
+* To print anything on console in Javascript we use --> Console.log("Some Text which we want to print on console");
+
+Console.log('Some Text which we want to print on console');
+
+Console.log(`Some Text which we want to print on console`);
+
+* Comments in Javascript(ctrl+/)
+Some line we write in our code for our understanding that is not excuted by javascript engine is called comment 
+For example:-
+//I can't be printed on console as i am a comment
+
+* Variables in Javascript("use strict"; --> it is written in the start of Js file so that variable can't be declared with using var keyword)
+Varible can store some Information and we can use that information later and can change the information later. Var keyword is used to declare a variable.
+Name of the variable are casesensitive i.e Student and student are two different things. value can be changed thats why it is called variable.
+For example:-
+* To declare a variable--> var Name_of_Variable = Value_of_variable;
+
+* To use a variable
+console.log(Name_of_Variable);
+
+* To change the value of variable
+Name_of_variable= Value_of_variable;
+
+*Rule for Naming variable
+   *You cannot start with number
+      For example:- 1value(invalid)
+                    value1(Valid)
+   *You can use only Underscore _ or dollar symbol
+   for example:- First_name(valid) //snake case writing
+                 _Firstname(valid)
+                 First$name(valid)
+                 $Firstname(valid)
+   *You cannot use sapces in name
+    for example:-
+              First name(invalid)
+
+    *convention 
+    start with small letter and use camelCase(firstName)
+
+*let keyword
+we can also declare a variable using let keyword.
+
+  for example:-
+    let Name_of_variable=value_of _variable;
+
+*difference between let and var
+(between let and var we should mostly use let instead of var.)
+
+var Name ="komal";
+var Name ="Nandini";
+console.log(Name);
+we have declared name two times still this will not give any error and will just update the value from komal to Nandini
+
+let Name="Komal";
+let Name="Nandini";
+console.log(Name); 
+we have declared name two times this will give an error that is Name has already been declared.
+
+
+*Declare constant
+Constant means whose value can't be changed. it we create a constant variable then we must have to provide some value to that variable otherwise it will throw an error(thant means a constant can't be undefined).  for example pie whose value can't be changed.
+
+for example :-
+const pi=3.14;
+pi=3.15; (this will throw an error becz we can't change value of constant)
+
+*String Indexing
+let  name_of_variable ="Nandini";
+
+-->  N a n d i n i  
+-->  0 1 2 3 4 5 6
+
+*To access the value at any index we use 
+     name_of_variable[index_value];(output will be--> n)
+*To find length of a string we use
+     name_of_variable.length
+*Last Index : length-1
+
+
+*Methods to work with String(string are imutable)
+
+1. trim() --> It is used to remove extra spaces in our string. 
+
+ for example:-
+   let Name="    Nandini    ";
+   Name= Name.trim();
+   console.log(Name.length);
+
+2. toUpperCase() --> It is used to Convert a string to uppercase. 
+
+for example:-
+   let Name="Nandini";
+   Name= Name.toUpperCase();
+   console.log(Name);
+
+3. toLowerCase() --> It is used to Convert a string to Lowercase. 
+
+for example:-
+   let Name="Nandini";
+   Name= Name.toLowerCase();
+   console.log(Name);
+
+3. slice() --> It is used to get the sub part of the whole string suppose from string Nandini I only want Nand then I can use slice.
+
+In this method we required to give two values
+1.start index -->index from where to start the index
+2.End index--> index of where we have to stop the string. and value at end index is not included in string.
+
+for example:-
+   let Name="Nandini";
+   Name= Name.slice(0,4);
+   console.log(Name);
+
+*Data types(Primitive data type)
+1.string "nandini"
+2.number 1, 5, 7.9
+3.booleans--> true or false 
+4.undefined--> If we create a variable and doesn't assign any value to it then it is undefined variable.
+for example:-
+let first_Name;
+console.log(typeof first_Name);
+5.null-->Null means nothing (not even zero). If we see the type of null then it will give us object.(console.log(typeof null); output will be object which is not correct It is a bug , error in javascript).
+for example:- let Variable=null;
+              console.log(Variable);
+              Variable="Nandini";
+              console.log(Variable , typeof Variable);
+      
+6.BigInt--> to make a number big int we use BigInt(1278725135347884526653123413);
+we can perform addition, subtraction and so many operations on two variables but type of both variable should be same big int otherwise it will throw an error.
+ for example:-
+   let Num= BigInt(12);
+            or
+   let Num= 12n; 
+   console.log(Num.MAX_SAFE_INTEGER);//MAX_SAFE_INTEGER is used to know that safely how big integer we can store in a variable
+
+7.symbol
+
+*typeof Operator-->it tells the datatype of an operator
+ for example:-
+ let age=7;
+ let Name="nandini";
+ console.log(typeof name_of_variable);
+ console.log(typeof value_of _variable);
+
+ *convert number to string
+ age=age + "";//this will convert the age which is a number to string(22-->"22")
+console.log(typeof age);
+            Or
+let age=6;
+age=String(age);
+console.log(typeof age);
+
+
+*convert string to number
+let my_Name=+"45";//just add '+' this addition symbol before a string and w=it will get converted into number
+console.log(typeof my_Name);
+              Or
+let age="6";
+age=Number(age);
+console.log(typeof age);
+
+
+*string concatenation
+for example:-(+ this symbol is used to concatenate two strings)
+let str1="Nandini";
+let str2="Chaudhary";
+let full_Name=str1 + " " + str2;
+console.log(full_Name);
+
+*template string(${})
+for example:-
+let age=22;
+let Name="Nandini";
+
+let about_Me="My name is " + Name + " and my age is " + age;//Doing such thing are very tedeous so we can make use of template string instead of this.
+
+let about_Me=`My name is ${Name} and my age is ${age}`;
+console.log(about_Me);
+
+
+*   == vs ===
+== to check weather two numbers are equal or not an it onle checks the value not the datatype.
+   for example:-
+    let num1="5";
+    let num2=5;
+    console.log(num1==num2); //true
+
+=== to check weather the two number are equal as well as it check the type is also same or not if the type is not same then it will return false.
+ for example:-
+    let num1="5";
+    let num2=5;
+    console.log(num1===num2); //false
+
+
+* != vs !==
+!= it checks that the two numbers are not equal it will return true if the two numbers are not same and false if the two no. are same.
+ for example:-
+   let num1=5;
+    let num2="5";
+    console.log(num1 != num2); //false
+
+!== it checks that the two numbers are not equal and also checks the type of the two variables that the variable is of same type or not if the variable will be of different type but value is same then it will return true.
+ for example:-
+    let num1=5;
+    let num2="5";
+    console.log(num1 !== num2); //True(it is telling dono different hai)
+
+    let num1=5;
+    let num2=5;
+    console.log(num1 !== num2); //false(it is telling dono same hai)
+
+* truthy and falsy values
+falsy values:- it any variable is given any falsy values out of these defined below then always the else statement will be in the output.
+   --> false 
+   --> ""
+   --> null
+   --> undefined
+   --> 0
+for example:-
+let first_name=false;
+if(first_name)
+{
+   console.log(first_name);
+}
+else{
+   console.log("first name is falsy");
+}
+
+truthy value:- Any value other then falsy value that is given to a variable is called truthy value.it will always give the output present in if statement.
+for example:-
+ let first_name="nandini";
+if(first_name)
+{
+   console.log(first_name);
+}
+else{
+   console.log("first name is falsy");
+}
+
+
+* if condition --> 
+if(condition){statment;}
+
+
+* if else condition --> 
+if(condition){statment;}
+else{statment;}
+
+* ternary operator
+for example:-
+let age=20;
+let drink=age>=5?"coffee":"milk";
+console.log(drink);
+
+*nested if else
+
+let num=4;
+let userGuess= +prompt("Guess a number");//to get some input from user we use prompt and prompt take input as string so we need to convert it to whatever datatype we need.
+
+if(userGuess===num){
+   console.log("your guess is right");
+}
+else{
+   if(userGuess<num)
+    {
+      console.log("Too low!!!");
+    }
+else{
+   console.log("Too high!!!");
+    }
+}
+
+* else if
+for example:-
+
+let Temperature=50;
+
+if(Temperature<0){
+    console.log("Extremly cold outside");
+}
+else if(Temperature<16){
+    console.log("Its cold outside");
+}
+else if(Temperature<25){
+    console.log("Weather is okay");
+}
+else if(Temperature<35){
+    console.log("It's hot outside");
+}
+else if(Temperature<45){
+    console.log("Its Extremely hot outside");
+}
+else{
+    console.log("Turn on Ac otherwise you will die");
+}
+
+
+* switch statement
+for example:-
+
+let day = 0;
+
+switch(day){
+   case 0 : {
+      console.log("Sunday");
+   }
+   case 1 : {
+      console.log("Monday");
+   }
+   case 2 : {
+      console.log("Tuesday");
+   }
+   case 3 : {
+      console.log("Wednesday");
+   }
+   case 4 : {
+      console.log("Thrusday");
+   }
+   case 5 : {
+      console.log("Friday");
+   }
+   case 6 : {
+      console.log("Saturday");
+   }
+   default{
+      console.log("Please enter a valid number between 0 & 6");
+   }
+}
+
+* While loop(DRY--> Don't repeat yourself)
+let num=0;
+while(num<=10){
+   console.log(num);
+   num++;
+}
+
+* do while loop
+
+let num=0;
+do{
+   console.log(num);
+   num++;
+}while(num<10);
+
+* for loop
+
+let num=10;
+for(let i=0;i<num;i++) //here variable i is declared so its scope is only within this for loop and outside for loop it will throw an error but if we declared it using var then it will not throw any error if we use the variable i outside for loop.
+{
+   console.log(i);
+}
+
+* break keyword
+for example:-
+  for(let i=0;i<=10;i++)
+  {
+     if(i===4)
+     {
+        break;
+     }
+     console.log(i);
+  }
+  console.log("you jumped out of loop becz condition inside if became true and break statement is encountered which made you jump here");
+
+  * Continue keyword
+for example:-
+  for(let i=0;i<=10;i++)
+  {
+     if(i===4)
+     {
+        Continue;
+     }
+     console.log(i);
+  }
+  console.log("you didn't jumped out of loop becz condition inside if became true and Continue statement is encountered which made you to continue furture but the condition which made if true will not be printed on screen ");
+
+
+
+* Intro to arrays
+previously we have seen primitive data type like number, string and so on but array is Reference type. Array is basically ordered collection of items. array can store any type of data. type of array is object in JS.
+
+let fruits=["orange", "apple", "Banana"];
+let number=[1, 2, 3, 4];
+let mixed=[1, 2, 3.5, null, "Nandini"];
+console.log(fruits);
+console.log(number);
+console.log(mixed);
+
+To access value present in array:-
+  let fruits=["orange", "apple", "Banana"];
+  console.log(fruits[0]);
+
+To update value present in array
+let fruits=["orange", "apple", "Banana"];
+  console.log(fruits);
+  fruits[0]="Lichi";
+  console.log(fruits);
+
+To check wheater a varible is array or not :-Array.isArray(name_of_variable);
+let fruits=["orange", "apple", "Banana"];
+  console.log(fruits);
+  console.log(Array.isArray(fruits));
+
+* Some methods of array
+  --->Array push pop
+  Push():- this method is used to insert any value in array at the end of the array.
+   let name_of_variable=["orange", "apple", "Banana"];
+  console.log(fruits);
+  name_of_variable.push("mango");
+  console.log(fruits);
+
+  pop():-this method is used to delete any value from the end of the array. This method also return the value it has removed.
+   let name_of_variable=["orange", "apple", "Banana"];
+  console.log(name_of_variable);
+  let poppedItem=name_of_variable.pop();
+  console.log(`popped item is ${poppedItem}`);
+
+  --->Array shift unshift
+
+  unshift():- to add any element to the start of the array we use unshift method
+   let name_of_variable=["orange", "apple", "Banana"];
+  console.log(fruits);
+  name_of_variable.unshift("mango");
+  console.log(fruits);
+
+shift():- to remove any element from the start of the array we use shift method.This method also return the value it has removed.
+ let name_of_variable=["orange", "apple", "Banana"];
+  console.log(name_of_variable);
+  let removedItem=name_of_variable.shift();
+  console.log(`Removed item is ${name_of_variable}`);
+
+Note:-Push and pop are fater than shift and unshift becz in shift and unshift elements are added and removed from start so all the array elements will be shifted thats why it's slow.
+
+*Primitive Vs reference data types
+ To understand this refer to fig1, fig 2 and fig 3 present in image folder. primitive data type use stack to store the data where as reference type uses heap and stack to store data.
+
+*How to clone array--> clone meaning creating a copy of an array.
+
+There are multiple ways to clone a array as listed below:-
+First way:-
+let array1=["item1","item2"];
+let array2=array1;
+console.log(array1===array2);
+In above case if we modify array1 then array2 will also be modified. but if we want that both the array should get modifed as we modify any array then we will do it as follow:-
+let array1=["item1","item2"];
+let array2=["item1","item2"];
+console.log(array1===array2);
+array1.push("item3");//only array1 will be modified not array 2.
+console.log(array1);
+console.log(array2);
+this way of cloning the array is not correct becz if we have thousand of data then it will not be efficient way.
+
+Second way:-
+we can also make use of slice method to clone the error.
+let array1=["item1","item2"];
+let array2=array1.slice(0).concat(["item3","item4"]);
+console.log(array1===array2);
+array1.push("item3");//only array1 will be modified not array 2.
+console.log(array1);
+console.log(array2);
+
+Third way:-
+let array1=["item1","item2"];
+let array2=[].concat(array1,["item3","item4"]);
+console.log(array1===array2);
+array1.push("item3");//only array1 will be modified not array 2.
+console.log(array1);
+console.log(array2);
+
+Fourth way(this is new way)Spread operator(...):-
+let array1=["item1","item2"];
+let array2=["item3","item4"];
+let array3=[...array1,...array2];
+console.log(array1===array2);
+array1.push("item3");//only array1 will be modified not array 2.
+console.log(array1);
+console.log(array2);
+
+--->for loop in array
+let arr=["Nandini","Subhangini","Kirti","Mamta"];
+let arr2=[];//array without any value
+let n=arr.length;
+for(let i=0;i<length;i++){
+  arr2.push(arr[i].toUpperCase());//pushed value of arr to arr2 in uppercase 
+}
+console.log(arr2);
+
+--->while loop in array
+const arr1=["Nandini","Subhangini","Kirti","Mamta"];
+const arr2=[];
+let n=arr.length;
+let i=0;
+while(i<n)
+{
+  arr2.push(arr1.toUpperCase());
+  i++;
+}
+console.log(arr2);
+
+--->for of loop in array
+const Names=["Nandini","Subhangini","Kirti","mamta"];
+const Names2=[];
+for(let name of Names){  
+   Names2.push(name.toUpperCase());
+}
+console.log(Names2);
+
+-->For in loop
+const Names1=["Nandini","subhangini","kirti"];
+const Names2=[];
+for(let index in Names1){ //here index repersent each index of array Names1
+   Names2.push(Names1[index].toUpperCase());
+}
+
+
+--->Use const for creating array
+const name =["nandini","subhangini"];
+name=["mamta","ishita"];//this will throw an error because we are trying to change value of array which is constant in this case. 
+name.push("Kirti");//this will not throw any error Because of concept of heap memory storage. 
+console.log(name);
+Note:- to make array mostly use const instead of let.
+
+
+--->Array Destructuring
+suppose we have been given a array having two elements and we want to create two variable which store those two element then we can do this as follow:-
+const Arr = ["item1","item2"];
+let a =arr[0];
+let b =arr[1];
+console.log("value of a is",a);
+console.log("value of b is",b);
+
+Do to above same thing javascript has provided a shortcut i.e we can do destructuring of array.
+const Arr=["item1","item2"];
+let[a,b]=arr; //here we have destructuring and the variable a and b act in same way as variable if we change the value value will be changed and so on.
+console.log("value of a is",a);
+console.log("value of b is",b);
+
+there can be may cases here while destructuring of array:-
+case 1:-Array may contain more elements then the variable
+const Arr=["item1","item2","item3","item4"];
+let[a,b]=Arr;
+console.log("Here a will store value of item1 and b will store value of item2");
+
+case 2:-Array may contain more elements then the variable
+const Arr=["item1","item2","item3","item4"];
+let[a, ,b]=Arr;
+console.log("Here a will store value of item1 and b will store value of item3");
+
+case 3:-Array may contain more elements then the variable
+const Arr=["item1","item2","item3","item4"];
+let[a,b,...new_Arr]=Arr;
+console.log("Here variable a will store value of item1 and b will store value of item2 and array new_Arr will contain rest of the array elements");
+
+case4:-Array may contain less element then the no. of variables
+const Arr=["item1"];
+let[a,b]=Arr;
+console.log("Here variable a will store value of item1 and b will be undefined because no. value is given to variable b");
+
+
+
+*Objects:-
+Arrays are good but not Sufficient for real world data for that we need objects.
+Objects store key value pairs and objects don't have index. Object is a reference type.
+
+How to create objects
+
+const person = {
+   Name:"Nandini",
+   age:22
+};
+console.log(person, typeof person);
+
+-->How to access data from object:-
+As we know that in array we access the data by their index but here in object we don't have concept indexes so we access data of objects as follow:-By using their key name.
+const Person = {
+   Name:"Nandini";
+   age:22;
+}
+console.log(Person.name);
+console.log(person.age);
+
+            or
+//access the properties of object using bracket
+const Person = {
+   Name:"Nandini";
+   age:22;
+}
+console.log(Person["name"]);
+console.log(person["age"]);   
+
+-->We can also store array in object:-
+const person = {
+     Name:"Nandini",
+     age:22,
+     hobbies:["listning music", "Sleeping"]
+};
+console.log(person.hobbies);
+
+-->How to add key value pair to objects:-
+const person = {
+     Name:"Nandini",
+     age:22,
+     hobbies:["listning music", "Sleeping"]
+};
+console.log(person);
+person.Gender="Female";//to add a key value pain in a object
+console.log(person);
+
+            or
+//add key value pair in a object using bracket
+const person = {
+     Name:"Nandini",
+     age:22,
+     hobbies:["listning music", "Sleeping"]
+};
+console.log(person);
+person["Gender"]="Female";//to add a key value pain in a object
+console.log(person);
+
+-->Differemce between dot and bracket notation:-
+
+1-->
+const person = {
+     Name:"Nandini",
+     age:22,
+     "person hobbies":["listning music", "Sleeping"]
+};
+console.log(person.person hobbies);//this will throw an error because there is space in key (person hobbies).
+console.log(person["person hobbies"]);
+
+2-->
+const key="email";
+const person = {
+     Name:"Nandini",
+     age:22,
+     "person hobbies":["listning music", "Sleeping"]
+};
+person[key]="nandinina040@gmail.com";
+console.log(person);
+
+-->How to iterate object
+we can iterate a array in two ways:-
+first way:- Using for in loop
+const person={
+   name:"Nandini",
+   age:22,
+   hobbies:["Listning Music", "sleeping"]
+};
+for(let key in person){
+   console.log(person[key]);
+}
+
+second way:-using object.keys in for of loop:-
+const person={
+  name:"Nandini",
+  age:22,
+  hobbies:["Listning Music", "sleeping"]
+};
+console.log(Object.keys(person));//it will return a array of all the keys of the object person.
+// let p=Object.keys(person);
+// console.log(typeof Object.keys(person));
+// console.log(Array.isArray(p));//to check wheather p is array or not
+for(let key of Object.keys(person)){
+  console.log(person[key]);
+}
+
+---> Computed properties
+
+const key1="objkey1";
+const key2="objKey2";
+
+const value1="myvalue1";
+const value2="myvalue2";
+
+const obj={
+   [key1]=value1,
+   [key2]=value2
+}
+console.log(obj);
+     
+       or
+
+const key1="objkey1";
+const key2="objKey2";
+
+const value1="myvalue1";
+const value2="myvalue2";
+
+const obj={};
+
+obj[key1]=value1;
+obj[key2]=value2;
+
+console.log(obj);
+
+--->Spread operator in object
+const obj1={
+  key1:"value1",
+  key2:"value2"
+};
+const obj2={
+  key1:"value1",
+  key3:"value3",
+  key4:"value4"
+};
+const new_obj={ ...obj1, ...obj2, key5:"value5"};//both the objects have same key key1 then while spreading the new object will have key value pair of last spreaded object as in this case its obj2 which is spreaded in last so key 1 of obj 2 will be in new object
+const obj_new={..."abc"};//used in problem solving.
+const new_o={...["item1","item2"]};
+console.log(new_obj);
+console.log(obj_new);
+console.log(new_o);
+
+----->Destructuring in object
+const Person={
+   Name:"Nandini",
+   age:22
+};
+
+const full_Name= Person.Name;
+const Age=Person.age;
+
+console.log(full_Name);
+console.log(Age);
+
+The above same thing can be done in javascript in easy way as follow:-
+
+const person={
+   Name:"Nandini",
+   age:22
+};
+const{Name, age}=person;//same key name as in object
+console.log(Name);
+console.log(age);
+
+It we want to change the name of variable that we are creating from object then we can do this as follow:-
+
+const person={
+   Name:"Nandini",
+   age:22
+};
+const{Name: full_Name, age:Age}=person;
+console.log(full_Name);
+console.log(Age);
+
+If the object have more properties then the no. of variable and we want to create object of those properties which are not used to make a variable then we can do this:-
+const person={
+   Name:"Nandini",
+   age:22,
+   Course:Btech,
+   Branch:IT
+};
+const{Name: full_Name, age:Age, ...rest_of_properties}=person;
+console.log(full_Name);
+console.log(Age);
+
+
+--->Objects inside array
+This is very useful in real world applications
+Suppose we want to store data of multiple users then we can do this as follow:-
+const users = [
+   {  Name:"Nandini",
+   age:22,
+   Course:Btech,
+   Branch:IT},
+   {  Name:"Subhangini",
+   age:22,
+   Course:Btech,
+   Branch:cse},
+   {  Name:"Mamta",
+   age:21,
+   Course:Btech,
+   Branch:IT}
+];
+for(let user of users){
+   consile.log(user);
+}
+
+To only get Name of all users we can do as follow:-
+
+const users = [
+  {  Name:"Nandini",
+  age:22,
+  Course:"Btech",
+  Branch:"IT"},
+  {  Name:"Subhangini",
+  age:22,
+  Course:"Btech",
+  Branch:"IT"},
+  {  Name:"Mamta",
+  age:21,
+  Course:"Btech",
+  Branch:"IT"}
+];
+for(let user of users){
+  console.log(user);
+}
+
+
+--->Nested destructuring
+
+const users=[
+   {Name:"Nandini", age:22, Course:"Btech", Branch:"IT"},
+   {Name:"Subhangini", age:22, Course:"Btech", Branch:"Cse"},
+   {Name:"Mamta", age:22, Course:"Btech", Branch:"IT"}
+];
+
+const[user1, user2, user3]=users;
+console.log(user1);
+console.log(user2);
+console.log(user3);
+
+we can furture destructure the objects in the array as follow:-
+
+const users=[
+   {Name:"Nandini", age:22, Course:"Btech", Branch:"IT"},
+   {Name:"Subhangini", age:22, Course:"Btech", Branch:"Cse"},
+   {Name:"Mamta", age:22, Course:"Btech", Branch:"IT"}
+];
+
+const[{Name: first_Name, age: Age}, , {Branch}]=users;//it will give us name of object 1 and branch of object 3
+console.log(first_Name, Age);
+console.log(Branch);
+
+
+* Function
+If we want to perform same task again and again then inspite of writting the whole code again and again we can make use of functions.
+
+for example :-
+suppose we want to Print Birthday song on console then we will do that as follow:-
+console.log("Happy Birthday to you....");
+
+and suppose we again want to print birthday song then again we will do the same this as we did above.
+what if we can do something like this that we write a code somewhere to print happy birthday and if we again want to do the same thing inspite of writting whole code we can write a function and call that function where ever we want to do the same thing.
+
+-->Function declaration
+function singHappyBirthday(){
+   console.log("Happy Birthday to you....");
+}
+singHappyBirthday();
+      Or
+--->Function expression
+const singHappyBirthday=function(){
+   console.log("Happy Birthday to you.....");
+}
+singHappyBirthday();
+       Or
+---> Arrow functions
+const sayHappyBirthday = () =>{
+   console.log("Happy Birthday to you");
+}
+sayHappyBirthday();
+
+-->Function declaration(Parametrized function)
+for example :-
+-->To find sum of two numbers
+function sumOfTwoNumbers(a1, a2){
+   return a1+a2;
+}
+let value1 = sumOfTwoNumbers(2,4);//
+(argument1, argument2)
+console.log(value1);//output will be 6
+let value2 = sumOfTwoNumbers();
+console.log(value2);//output will be NaN i.e not a number because we have not passed any argument while calling the function so a1 and a2 will be undefined as they didn't got any value and sum of two undefined number is NaN.
+        or
+--->Function expression:-
+Functions that doesn't have name but takes the variable name as function name in which it is stored. 
+const sumOfNumbers =function(a1,a2){
+      return a1+a2;
+}
+const sum=sumOfNumbers(2,4);
+console.log(sum);
+        or
+--->Arrow Function
+const sumOfNumbers = (a1,a2)=>{
+   return a1+a2;
+}
+console.log(sumOfNumbers(2,4));
+
+
+
+Example:-
+--> to find whethere no. is even or not
+
+function isEven(num){
+  if(num%2===0){
+     return true;
+  }
+  else{
+    return false;
+  }
+}
+let even=isEven(2);
+console.log(even);
+    Or
+-->Arrow function
+const isEven= (num) =>{
+   if(num%2===0){
+      return true;
+   }
+   else{
+      return false;
+   }
+}
+let Even= isEven(6);
+console.log(Even);
+
+-->create a function which takes a string and gives us first character of the string.
+
+function get_first_char(str){
+   console.log(str[0]);
+}
+get_first_char("Nandini");
+
+-->write a function which takes a array and a target value as a input and the output will be the index of target value if the target value is present in the array.
+
+function find_target(Arr, target){
+    let n=Arr.length;
+    for(let i=0;i<n;i++)
+    {
+       if(Arr[i]===target)
+       {
+          return i;
+       }
+       else{
+          console.log("Target not found");
+       }
+    }
+}
+let Array=[10,20,30,40];
+
+let Target_index=find_target(Array,30);
+console.log(Target_index);
+
+
+
+--->Hoisting:- when we call the function before declaring it the function then it is called Hoisting.
+
+//function call
+Hello();
+
+//function declarartion
+function Hello(){
+   console.log("Hello world");
+}
+
+note :-we can't perform hoisting is case of function expression and arrow function if we tried to do it then it will throw error.
+
+
+* Function inside function
+const app = () =>{
+   const Func = () =>{
+      console.log("You are inside my app");
+   }
+   const sum = (a1, a1) => {
+      console.log(a1+a2);
+   }
+   console.log("Inside App");
+   Func();
+   sum();
+}
+app();
+
+*Lexical scope
+If a function doesn't get a variable within the function then it search outside that function that is in it lexical scope i.e suppse if a function is defined inside a function and the function is taking a variable and the function doesn't get the variable within itself then it will search the variable inside the function in which it is declared and even if it doesn't get the variable then it will search in Global scope.
+
+for example:-
+const var0="value0";
+function App(){
+   const var1="value1";
+      const func1 = function(){
+      console.log("Inside App i am a variable and my value is:-",var1);
+   }
+   const func2 = () =>{
+         const var2="value2";
+         console.log("Inside func2 i am a variable and my value is:-",var2)
+   }
+   console.log("You are inside app and i am trying to access a variable which is not in this App function but it is present outside the function App", var0);
+   func1();
+   func2();
+}
+App();
+
+* Block scope Vs function scope
+-->Let and const have Block scope means outside a block that variable can't be accessed.
+-->variable have function scope means the variable can be accessd anywhere within the function.
+
+
+function App(){
+  if(true){
+     var var1="value1";
+     console.log(var1);//wil not throw error becz var1 is defined with in this block
+  }
+  if(true){
+    let var2="value2";
+    //console.log(var2);//wil not throw error becz var2 is defined with in this block
+ }
+ if(true){
+  const var3="value3";
+  //console.log(var3);//wil not throw error becz var3 is defined with in this block
+}
+  console.log(var1);//wil not throw error becz var1 is defined using var and var has function scope so it can be accessed anywhere witin th function. 
+  console.log(var2);//throw an error becz var2 is defined using let and let has block scope so outside if it will throw error 
+  console.log(var3);//throw an error becz var3 is defined using Const and Const has block scope so outside if it will throw error 
+ }
+App();
+console.log(var1);//throw an error becz var1 is defined using Var and var has function scope so outside fuction App it will  throw error.
+
+*Default parameters:-
+if the function will not be passed any value then it will make use of default value given to the function.
+
+function Sum(a1=2,a2=3){
+  console.log(a1+a2);
+} 
+Sum();
+
+*Rest parameters:-
+lets understand this with the help of example:-
+function all(a,b,...c){
+  console.log(`a is ${a}`);
+  console.log(`b is ${b}`);
+  console.log('c is',c);
+}
+all(1,2,3,4,5,6,7,8);
+
+so here we can see that when we call the function first 2 argument will get first two values and the rest of the values will be stored in the C as a array.  
+
+one more example:-
+function sum_all(...numbers){
+   let sum=0;
+   for(number of numbers){
+      sum = sum+number;
+   }
+   console.log(sum);
+}
+sum_all(1,2,3,4,5,6);
+
+*Param destructuring
+It is used with the object.
+
+const person = {
+   Name:"Nandini",
+   age:22,
+   Gender:"Female"
+} 
+
+function Person_all(obj){
+      console.log(obj.Name);
+      console.log(obj.age);
+}
+Person_all(person);
+
+the above function is a normal function now we can destructe the parameter of the function as follow
+
+const person = {
+  Name:"Nandini",
+  age:22,
+  Gender:"Female"
+} 
+
+function Person_all({Name:Full_Name,age:Age}){
+     console.log(Full_Name);
+     console.log(Age);
+}
+Person_all(person);
+
+
+*Call Back functions
+When we pass a function as a parameter to another function and that function to which we have passed the  function as a parameter calls that function then it is called call back function that a function is calling another function.
+
+for example:-
+
+function func2(name){
+   console.log("you are inside func2");
+   console.log(`your name is ${name}`);
+}
+
+function func1(callBack){ //here this callBack parameter becomes a function a we can call this function.
+   console.log("Hello there i am a function and i can call another function as follow");
+   callBack("Nandini");
+}
+
+func1(func2);
+
+
+*function returning function
+
+function myfunc(){
+   function Hello(){
+      return "Hello world";
+   }
+   return Hello;
+}
+
+const result=myfunc(); //this will call a function myfunc and myfunc will return a function Hello and the result will be stored in result and as it is providing function thats why result now becomes function.
+console.log(result()); //this will call Hello function
+
+function returning a function or callback function both are called high order function.
+
+
+*Important array methods
+
+1.forEach
+const numbers=[4,2,5,8];
+
+function get_number(number, index){
+   console.log("index is",index);
+   console.log(`${number}*2 = ${number*2}`);
+}
+get_number(numbers[0], 0);
+get_number(numbers[1], 1);
+now as we can see that we have to call the get_number function again and again till the array is not completely travesed so inspite of doing that we can make use of for loop.
+
+const numbers=[4,2,5,8];
+
+function get_number(number, index){
+   console.log("index is",index);
+   console.log(`${number}*2 = ${number*2}`);
+}
+for(let i=0;i<numbers.length;i++){
+   get_number(numbers[i],i);
+}
+
+the above thing can be further simplifid using for each.
+
+const numbers=[4,2,5,8];
+
+function get_number(number, index){
+   console.log("index is",index);
+   console.log(`${number}*2 = ${number*2}`);
+}
+numbers.forEach(get_number);//for each here is doing call back it is calling back the get_number function and giving us the desired result.
+
+inspite of writing the function that we have passed to for each we can create the whole function is forEach itself. a function that doesn't have any name is called anonymus function and here inside forEach we are going to create anonymus function. as follow:-
+const numbers=[4,2,5,8];
+numbers.forEach(function(number, index){
+   console.log("index is",index);
+   console.log(`${number}*2 = ${number*2}`);
+});
+
+inspite of creating anonymus function we can also create arrow function(for each takes callback function as argument):-
+const numbers=[4,2,5,8];
+numbers.forEach((number,index)=>{
+   console.log("Index of",number,"is this",index);
+})
+
+2.map
+
+Map function takes callback function as a argument and return a array.basically it maps the result that is returned by a function as array. if we are making use of map method then we need to return something. map method return a new array.
+
+
+const numbers=[2,5,3,6,7];
+const square=function(numbers){
+   return numbers*numbers;
+}
+const Square_array=numbers.map(square);
+console.log(Square_array);
+
+
+inspite of creating a seperate function and passing it as a parameter to map function we can direction create the function inside map function.
+
+
+const numbers=[2,5,3,6,7];
+const Square_array=numbers.map(function(numbers){
+   return numbers*numbers;
+});
+console.log(Square_array);
+
+
+
+3.filter method
+
+It gives Array as a result and will filter out those which stisfies the  condition that we have defined.
+const array=[1,7,8,3];
+const isEven=function(arr){
+    if(arr%2===0)
+    {
+       return true;
+    }
+}
+const even=array.filter(isEven);
+console.log(even);
+    or
+const array=[1,7,8,3];
+const even=array.filter(function(arr){
+    if(arr%2===0)
+    {
+       return true;
+    }
+});
+console.log(even);
+
+4.reduce Method
+
+const numbers=[1,2,3,4,5,10];
+const sum = numbers.reduce((accumulator, currentValue) =>{
+   return accumulator + currentValue;
+});
+console.log(sum);
+
+accumulator   currentValue  return
+  1               2           3
+  3               3           6
+  6               4           10
+  10              5           15
+  15              10          25
+
+
+  Another Example:-
+ const userCart=[
+  {id:1, Name:"Mobile", price:12000},
+  {id:1, Name:"Laptop", price:22000},
+  {id:1, Name:"TV", price:15000},
+ ];
+
+ const total_price= userCart.reduce((totalPrice, currentProduce)=>{
+    return totalPrice+currentProduce.price;
+ },0);//0 in this line is the initial value of totalPrice. we can provide intital value to accumulator if we don't provide that then it will take first value of array as totalPrice initial.
+ console.log(total_price);
+
+totalPrice  currentPoduct.price return
+   0           {}                12000
+   12000     22000               34000
+   34000     15000               49000
+
+Note:- forEach, Map, Filter,Reduce doesn't mutate (i.e doesn't change) the array but provides us a new array.5. Sort Method
+   To sort the array elements in javascript we have sort method.this method changes the array and doesn't produce a new array.
+
+const arr=[3000,1,4,2000,9];
+console.log(arr.sort());//this will not give us the desired sorted array because the sort method is treating each array element as a string and according to the ASCII value of the the first character of the string it will sort the array as in 3000 "3" is the first character so its ASCII value it will take at the place of 3000 and so on and will sort the array.
+
+["3000","1","4","2000","9"] //real array
+[51,48,52,50,57]//sort function is sorting this array 
+
+after sorting the above array the result will be:-
+[1,2000,3000,4,9]
+[48,50,51,52,57]
+
+This sort method sorts the array having string elements accuratly but not the numeric array :-
+const arr=["Nandini","Mamta","subhangini"];
+console.log(arr.sort());
+
+
+But we didn't got the desired results in case of numberic elements so we will do that as follow:-
+const arr=[3000,1,4,2000,9];
+arr.sort((a,b)=>{
+  return a-b;
+})
+console.log(arr);
+
+The above code will sort the array correctly is Ascending order
+to sort the array in descending order we just need to return b-a insted of a-b.
+this method is returning a-b 
+if a-b is postive and greator then zero then b will come before a
+if a-b is negative and less then zero then a will come before b
+
+
+Const products =[
+   {ID:1, Name:"Nandini", price:300},
+   {ID:2, Name:"Subhangini", price:3000},
+   {ID:3, Name:"Kirti", price:200},
+   {ID:4, Name:"Mamta", price:8000}
+];
+
+products.sort((a,b)=>{
+   return a.price-b.price;
+});
+console.log(products);
+
+*Find Method
+this method will find out all those element in the array which satisfies  the condition that we have defined in the function . IT will only return the first occurance which satisfies the condition.
+
+const myArray = ["Hello", "cat", "Dog", "Lion"];
+
+
+const arr=myArray.find((str)=>{
+   return str.length===3;
+};);
+console.log(arr);
+
+const products =[
+   {ID:1, Name:"Nandini", price:300},
+   {ID:2, Name:"Subhangini", price:3000},
+   {ID:3, Name:"Kirti", price:200},
+   {ID:4, Name:"Mamta", price:8000}
+];
+
+const arr=products.find((user)=>{
+   return user.ID===3;
+});
+console.log(arr);
+
+*Every Method
+this method is used to check that all the elements in the array satisfies a paticular condition or not.
+const numbers = [4,2,7,5,3];
+
+const ans = numbers.every((number)=>{
+   return number%2===0;
+});
+console.log(ans);
+
+//the call back function will return boolean values either true or false
+//every method will also return true and false and will return true if all the elements in the array will be even.
+
+Real life example of Every Method
+const userCart=[
+  {id:1, Name:"Mobile", price:12000},
+  {id:1, Name:"Laptop", price:22000},
+  {id:1, Name:"TV", price:15000},
+ ];
+
+ const lessThan=userCart.every((user)=>{
+    return user.price<30000;
+ });
+ console.log(lessThan);
+
+ *some Method
+ This method will return true if any one element out of all the element satisfies the condition that we have define if none of the element satisfies the condition then it will return false.
+
+ const numbers = [4,2,7,5,3];
+
+const ans = numbers.some((number)=>{
+   return number%2===0;
+});
+console.log(ans);
+
+//real life example
+const userCart=[
+  {id:1, Name:"Mobile", price:12000},
+  {id:1, Name:"Laptop", price:22000},
+  {id:1, Name:"TV", price:15000},
+ ];
+
+ const lessThan=userCart.some((user)=>{
+    return user.price<30000;
+ });
+ console.log(lessThan);
+
+ *Fill method
+If we want to fill all the elements of an array with some value then we can make use of fill method. we can specify the value with which we want to fill the elements of the array and start and end postion as well.
+
+One use of fill method is if we want to fill the whole array with a value in below example we have filled the array with -1.
+const myArray = new Array(10).fill(-1);
+console.log(myArray);
+
+const myArray=[1,2,3,4,5,6,7];
+const arr=myArray.fill(0, 2, 5);
+console.log(arr);
+
+*splice method
+
+If we want to delete or insert anything from array we make use of splice.
+// start delete insert
+//delete will also return the deleted item
+const myArr = ['item1','item2','item3'];
+const deleted_item=myArr.splice(1, 2);//this will delete two item from the start value that we have specified i.e from first index and second index it will delete the item of array. 
+console.log (myArr);
+console.log (deleted_item);
+myArr.splice(1, 0, "inserted item");//this will insert a item at the first index of array. zero here is that no idem is deleted, 1 here is the index at which we want to insert the item and "inserted item" is the item that we are going to insertm in the array
+console.log (myArr);
+
+//delete and insert simuntaneously.
+const myArr = ['item1','item2','item3'];
+myArr.splice(1, 2, "inserted item2","inserted item3");
+console.log (myArr);
+
+
+*Iterable
+Iterables are those on which we can apply for of loop like strings and arrays are iterable. objects are not iterable.
+
+for example:-
+const first_Name="Nandini";
+for(let char of first_Name){
+   console.log(char);
+}
+
+const users_Name=["Nandini","Kirti","subhangini"];
+for(let user of users_Name){
+   console.log(user);
+}
+
+*array like object
+
+Array like objects are those which have length property and those which can be accessed through index like string and array.
+
+const first_Name="Nandini";
+console.log(first_Name.length);
+console.log(first_Name[4]);
+
+
+const my_Array=["Nandini","Kirti","subhangini"];
+console.log(my_Array.length);
+console.log( my_Array[2]);
+
+
+*sets(it is iterable)
+It stores data in linear order like array. Difference between set and array is that set only store unique items that is no dublicates allowed. it we will add dublicate value in the set then it set will ignore it and will not allow dublicate and one more difference is that here there is no index based access so order is not guaranteed.
+It is used when we have unique value and we know the one value can't come more than once.
+
+how to create set:-
+const numbers = new Set([2,5,6]);//Inside the brackets we can write any iterable like array and string.
+console.log(numbers);
+console.log(numbers[2]);//this will give undefined becz in sets there is no index based access.
+
+Some methods of set:-
+const items = ["items1","items2","items3"]; 
+const numbers= new Set();//here we created a empty set and we can add elements in this set using add method
+numbers.add(1);
+numbers.add(2);
+numbers.add(2);//this will be ignored because we have already inserted 2 before
+numbers.add(["item1","item2"]);//we can also store array in a set
+numbers.add(["item1","item2"]);//this will also get added in the set it will not be ignored because both the array have different address.
+numbers.add(items);
+numbers.add(items);//this will be ignored because items have already been inserted.
+console.log(numbers);
+
+Has method in set:-
+it is used to check weather a number is present in the set or not
+
+const numbers= new Set();
+numbers.add(1);
+numbers.add(2);
+numbers.add(3);
+numbers.add(4);
+if(numbers.has(1)){
+   console.log("1 is present");
+}
+else{
+   console.log("1 is not present");
+}
+console.log(numbers);
+
+//sets are iterable
+const numbers= new Set();
+numbers.add(1);
+numbers.add(2);
+numbers.add(3);
+numbers.add(4);
+for(let number of numbers){
+console.log(number);
+}
+
+//real life example
+we know that ids are unique so for that we can use set
+
+//suppose we have a array in which we have dublicate items and we only want unique items from that array then we can make use of set to 
+const myArray = [1,2,4,4,5,6,5,6];
+const uniqueItems= new Set(myArray);
+console.log(uniqueItems);
+
+//to find the length of a set
+we can't find length of a set using length property (uniqueItems.length). so to find the length of a set we make do it using for loop.
+const myArray = [1,2,4,4,5,6,5,6];
+const uniqueItems= new Set(myArray);
+console.log(uniqueItems);
+let length=0;
+for(let i of uniqueItems)
+{
+   length=length+1;
+}
+console.log(length);
+
+
+* Maps 
+It Store key value pair like objects. difference between object and map is that in object the key is only of string type but by using we can make any type of key like object, array, number, string etc. Maps are iterable where as objects are not iterable on objects we can apply for in loop to iterate but here in case of map we can also apply for of loop to iterate. Map stores data in odered fashion. dublicate keys are not allowed like objects
+
+How to create a map
+const person = new Map();//A empty map is being created
+
+To insert any key value pair in map:-
+person.set("firstName","Nandini");
+person.set("age",22);
+person.set(1,"one");//here key 1 is of type number 
+person.set([1,2,3],"one two Three");//we can make array as a key in map
+person.set({A:"first"},"one two Three");//we can make object as a key in map
+
+//How can we access any key value pair in map
+//person.FirstName or person["firstName"](we access the key value pair of object like this but in case of map we can't access it like this)
+
+person.get("firstName");//this will only access the key first name
+console.log(person.keys());//to print all the keys. this is a map iterator
+for(let key of person.keys()){ //we can also print the keys using for loop
+   console.log(key, typeof key);
+}
+
+
+for example:-
+const person = new Map();
+person.set("firstName","Nandini");
+person.set("age",22);
+for(let key of person){
+   console.log(Array.isArray(key));//here it will give us array of key value pair to chack it it's returning array or not we can use Array.isArray()
+}
+
+//if we want to print both key value using for loop then we have to destructure it as foolow
+const person = new Map();
+person.set("firstName","Nandini");
+person.set("age",22);
+for(let [key, value] of person){//here we have destructure the array
+   console.log(key, value);//here we have printed the key value pair
+}
+
+//Another way to create a map
+const person =new Map([["firstName","Nandini"],["age",22]]);
+console.log(person);
+
+for example:-
+suppose we have a object person1 and we want to store more information of a person1 but not in person1 object then we can use Map
+const person1 = {
+   id:1,
+   firstName: "Nandini"
+}
+
+const extraInfo = new Map();
+userInfo.set(person1, {age:22, gender:"female"});
+console.log(userInfo);
+console.log(person1.id);
+console.log(extraInfo.get(person1).age);
+
+
+*clone using object.assign
+
+const obj1 ={
+   key1: "value1",
+   key2: "value2"
+}
+
+we can clone object in three ways
+
+first way:-
+//const obj2 = obj1;//obj2 is cloned from obj1 and if we will make changes in obj1 it will also change obj2 so if we don't want that then we can clone obj2 using spread method.
+
+second way:-
+const obj2 = {...obj1};//spread operator this will clone obj1 and if we change obj1 then obj2 will not be changed.
+
+third way:-
+const obj2= object.assign({},obj1);//this will clone obj1 and if we change obj1 then obj2 will not be changed.
+
+* Optional chaining
+ If we have nested object then we make of optional chainging. 
+ for example:-
+ here we have a object user that has a property address which a object. 
+ suppose a user don't have a address in begining as show below:-
+const user = {
+   firstName: "Nandini",
+}
+console.log(user.firstName);//here we are trying to access first name and it will print first name
+console.log(user.address)//this will give undefined
+console.log(user.address.houseNumber);//this will give error  because if adress doesn't exist then how will housenumber exist.
+
+so even if address doesn't exist and can have some value for address in future then we can make use of optional chaining. in optional chaining we use "?." that means if address exist and have a houseno then it will print the houseno otherwise it will give undefine not error.
+
+const user = {
+   firstName: "Nandini",
+   address: {houseNumber: "321"}
+}
+
+console.log(user?.firstName);//?. here is for optional chaining
+console.log(user?.address?.houseNumber);//this eill give undefined not error
+
+
+* Methods:-
+function inside object is a method
+
+const person = {
+   firstName:"Nandini",
+   age: 22
+   about: function(){
+      console.log('person firstName is Nandini and age is 22');
+   }
+}
+
+person.about();//it will call the about function of person object.
+
+in the above example we will get person name is Nandini and age is 22 as we will call the function. Here there is a problem what if i will change the first name and age of the object we will still get the same output the firstname and age will not get changed so to change the firstname and age as we change the value in the object we can make use of 'this' keyword as follow and we will print the output using templat string.
+
+without using this keyword we will get erroe saying firstname and age are not defined:-
+
+
+const person = {
+    firstName:"Nandini",
+    age: 22,
+    about: function(){
+       console.log(`person firstName is ${firstName} and age is ${age}`)
+    }
+ };
+ 
+ person.about();//it will call the about function of person object and here in we will get error that firstName and age is not defined
+
+using this keyword we can resolve the above error
+
+
+const person = {
+    firstName:"Nandini",
+    age: 22,
+    about: function(){
+       console.log(`person firstName is ${this.firstName} and age is ${this.age}`)
+    }
+ };
+ 
+ person.about();//it will call the about function of person object and here in we will not give any error. 'this' keyword here is a object.' 'this'keword here is the object that is calling the about function that is person. here 'this' is repersenting to person object and we know that we can acces the object value like this (objectname.keyname) i.e here we can access it as shown(this.firstName).
+
+
+ for example:-
+
+function personInfo(){
+       console.log(`person firstName is ${this.firstName} and age is ${this.age}`)
+    };
+
+const person1 = {
+    firstName:"Nandini",
+    age: 22,
+    about: personInfo
+ };
+ const person2 = {
+    firstName:"Subhangini",
+    age: 22,
+    about: personInfo
+ };
+ const person3 = {
+    firstName:"kirti",
+    age: 20,
+    about: personInfo
+ };
+ const person4 = {
+    firstName:"Mamta",
+    age: 21,
+    about: personInfo
+ };
+ person1.about();
+ person2.about();
+ person3.about();
+ person4.about();
+
+
+* More about this keyword:-
+
+console.log(this);// here it will print window objects. In JS window is a global object.
+
+console.log(window);//it will also print window object of Js. (This===window will give true becz this and window are same)
+
+if we don't want to print window object we can write use strict in the start of file and then if we will console 'this' keyword then it will give undefined as shown below:-
+
+
+function myfunc(){
+"use strict";
+console.log(this);//it will not print window object it will give undefined
+}
+myfunc();
+
+
+* call():-
+It is use to call any function.in this method we pass the parameter seperately.
+funstion hello(){
+   console.log("hello world");
+}
+hello();//it will call the hello function
+hello.call();//we can also call the function is this way
+
+Now we will discuss call, apply and bind in detail becz these topics are imp acc to interview
+
+const user1 = {
+   Name:"Nandini",
+   age: 22,
+   about: function(){
+      console.log(this.Name, this.age);
+   }
+}
+
+const user2 = {
+   Name:"Mamta",
+   age: 21
+}
+
+user1.about();//it will call the about function of user1
+
+suppose i want to call about function of user1 for user2 then we can do that using call function as follow:-
+
+const user1 = {
+   Name:"Nandini",
+   age: 22,
+   about: function(){
+      console.log(this.Name, this.age);
+   }
+}
+
+const user2 = {
+   Name:"Mamta",
+   age: 21
+}
+
+user1.about.call(user2);
+
+
+more examples:-
+
+suppose i want to call about function of user1 and user2 then we can do that using call function as follow:-
+
+function about(){
+      console.log(this.Name, this.age);
+   }
+const user1 = {
+   Name:"Nandini",
+   age: 22,
+}
+
+const user2 = {
+   Name:"Mamta",
+   age: 21
+}
+
+about.call(user1);
+about.call(user2);
+
+//if the function have some more arguments then we can also pass that in call function as shown we have passed hobby and fav person
+function about(Hobby, favPerson){
+    console.log(this.Name, this.age, Hobby, favPerson);
+ }
+const user1 = {
+ Name:"Nandini",
+ age: 22,
+}
+
+const user2 = {
+ Name:"Mamta",
+ age: 21
+}
+
+about.call(user1, "singing", "LataMangeskar");
+about.call(user2, "Dancing", "Micaljackson");
+at
+* apply method:-
+it is same as call it works same as call method but the only difference is that we just provide the parameters of the function in the form of list in apply method.
+function about(Hobby, favPerson){
+    console.log(this.Name, this.age, Hobby, favPerson);
+ }
+const user1 = {
+ Name:"Nandini",
+ age: 22,
+}
+
+const user2 = {
+ Name:"Mamta",
+ age: 21
+}
+
+about.apply(user1, ["singing", "LataMangeskar"]);
+about.apply(user2, ["Dancing", "Micaljackson"]);
+
+* Bind method
+It is same as call the only difference is that it returns a function.
+function about(Hobby, favPerson){
+    console.log(this.Name, this.age, Hobby, favPerson);
+ }
+const user1 = {
+ Name:"Nandini",
+ age: 22,
+}
+
+const user2 = {
+ Name:"Mamta",
+ age: 21
+}
+
+const func= about.bind(user1, "singing", "LataMangeskar");//it will return a function which is store in variable func
+func();//here we are calling the function
+
+
+* Don't do this mistake
+
+const user1 = {
+   Name:"Nandini",
+   age: 22,
+   about: function(){
+      console.log(this.Name, this.age);//here this is pointing to window object
+   }
+}
+const myfunc = user1.about;//it will return the whole function will not call the function about so at this point 'this' keyword will not be the user1 object it will be the window object. 
+console.log(myfunc);
+myfunc();//the output will be undefined undefined because there is no properties like first name and age in window object.
+
+//to overcome the above mistake do this:-
+const user1 = {
+   Name:"Nandini",
+   age: 22,
+   about: function(){
+      console.log(this.Name, this.age);
+   }
+}
+const myfunc = user1.about.bind(user1);//here it will bind 'this' to user1 and will return a function to myfunc becaz we know that bind function returns a function.
+myfunc();//when we call my func it will call about function of user1 so we will get the name and age of the user1.
+
+
+* In case of arrow function lets see the behavior of 'this':-
+Arrow function don't have its own this. Arrow function takes its this from its surrounding that means here in case of arrow function 'this' is not repersenting to object user1 but in actual it is repersenting to window object which is its surrounding object.
+const user1 = {
+   Name:"Nandini",
+   age: 22,
+   about: ()=>{
+      console.log(this.Name, this.age);
+   }
+}
+user1.about();
+
+
+* short way to create method inside object:-
+const user1={
+   Name:"Nandini",
+   age: 20,
+   about(){
+      console.log(this.Name, this.age);
+   }
+}
+user1.about();
+
+
+* Important concepts
+Here we have a simple object
+const user1 = {
+    firstName:"Nandini",
+    lastName:"Chaudhary",
+    email: "nandinina040@gamil.com",
+    age:22,
+    address: "house number, colony, pincode, state",
+    about: function(){
+       return`${this.firstName} is ${this.age} years old.`;
+    },
+    is18:function(){
+       return this.age>=18;
+    }
+}
+const about_user=user.about();
+console.log(about_user);
+
+suppose we have multiple user whose data is different so we will not keep on creating users again and again it will be very tideous task we need to find a better approach:-
+so we will create a function which will take multiple parameters like firstname lastname and so on and that function will :-
+1.create the object 
+2. add key value pairs
+3. return the object
+
+function create_User(firstName,  lastName, email,  age, address){
+   const user = {};
+   user.firstName =firstName;
+   user.lastName =lastName;
+   user.email =email;
+   user.age = age;
+   user.about =function(){
+      return`${this.firstName} is ${this.age} years old.`;
+   }
+   user.is18 =function(){
+      return this.age>=18;
+   }
+   return user;    
+}
+ 
+const user1= create_User("Nandini", "chaudhary", "nandinina040@gamil.com", 22, "house number, colony, pincode, state");
+console.log(user1);
+console.log(user1.is18());
+console.log(user1.about());
+
+In the above code there will be a problem and the problem is :-
+function create_User(firstName,  lastName, email,  age, address){
+   const user = {};
+   user.firstName =firstName;
+   user.lastName =lastName;
+   user.email =email;
+   user.age = age;
+   user.about =function(){
+      return`${this.firstName} is ${this.age} years old.`;
+   }
+   user.is18 =function(){
+      return this.age>=18;
+   }
+   return user;    
+}
+ 
+const user1= create_User("Nandini", "chaudhary", "nandinina040@gamil.com", 22, "house number, colony, pincode, state");
+const user2= create_User("Subhangini", "chaudhary", "subhangini121@gamil.com", 22, "house number, colony, pincode, state");
+const user3= create_User("Mamta", "Arora", "mamtaaroksh@gamil.com", 21, "house number, colony, pincode, state");
+
+when we will create user1 a object will be created  and there will be two method about and is18 will get created in memory and in the same way when we will create user2 a object of user 2 will be created and again the same methods about and is18 will be created in memory and so on if we keep on creating users object of that user will be created and those two methods will also get created in memory which is not need we only need one instance of those function in the memory becz the function defination for all user will remain same. so what we will do we will remove those methods from here as shown and will create a object name userMethods and that object has two methods and in the create_User function we will create reference of userMethods:-
+
+const userMethods={ //this object has been created in heap memory and it is pointing to a single memory not getting created in different memory location again and again
+   about:function(){
+      return`${this.firstName} is ${this.age} years old.`;
+   },
+   is18:function(){
+      return this.age>=18;
+   }
+}
+function create_User(firstName,  lastName, email,  age, address){
+   const user = {};
+   user.firstName =firstName;
+   user.lastName =lastName;
+   user.email =email;
+   user.age = age;
+   user.about=userMethods.about;//refering to about method of userMethods object that means refering to the same memory location not getting created in different memory location
+   user.is18=userMethods.is18;//refering to is18 method of userMethods object that means refering to the same memory locationnot getting created in different memory location
+   return user;    
+}
+ 
+const user1= create_User("Nandini", "chaudhary", "nandinina040@gamil.com", 22, "house number, colony, pincode, state");
+const user2= create_User("Subhangini", "chaudhary", "subhangini121@gamil.com", 22, "house number, colony, pincode, state");
+const user3= create_User("Mamta", "Arora", "mamtaaroksh@gamil.com", 21, "house number, colony, pincode, state");
+console.log(user1.about());
+console.log(user3.about());
+
+
+-->Now still there is a problem in above code:-
+
+suppose we have a another method then we will create a method in userMethods and will create a reference of thet method in create_user function so suppose we have to create thousand of methods then we also have to refernce them in create_User function and suppose you forgot to reference them in create_User function then it will create a problem.
+
+const userMethods={
+   about:function(){
+      return`${this.firstName} is ${this.age} years old.`;
+   },
+   is18:function(){
+      return this.age>=18;
+   }
+   sing: function(){
+      return "Sare gama padh nisha";
+   }
+}
+function create_User(firstName,  lastName, email,  age, address){
+   const user = {};
+   user.firstName =firstName;
+   user.lastName =lastName;
+   user.email =email;
+   user.age = age;
+   user.about=userMethods.about;
+   user.is18=userMethods.is18;
+   user.sing = userMethods.sing;
+   return user;    
+}
+ 
+const user1= create_User("Nandini", "chaudhary", "nandinina040@gamil.com", 22, "house number, colony, pincode, state");
+const user2= create_User("Subhangini", "chaudhary", "subhangini121@gamil.com", 22, "house number, colony, pincode, state");
+const user3= create_User("Mamta", "Arora", "mamtaaroksh@gamil.com", 21, "house number, colony, pincode, state");
+console.log(user1.about());
+console.log(user3.about());
+
+
+solution to above problem is:-
+ to solve the above problem we first need to understand one thing lets understand that first:-
+
+const obj1={
+   key1: "value1",
+   key2: "value2"
+}
+const obj2={
+   key3: "value3"
+}
+console.log(obj2.key2);//output will be undefined
+here in the above code what we are doing is we are trying to access key2 of obj1 from obj2 so here the outhput that we will get is undefined becz there is no key2 in obj2.
+
+we can create the obj2 to in this way as well we can first create a empty object and then using dot operator we can insert properties in obj2 as follow but still if we try to acces key2 from obj2 it will give us undefined:-
+const obj1={
+   key1: "value1",
+   key2: "value2"
+}
+const obj2={};//object created 
+obj2.key3="value3";// property of obj2
+console.log(obj2.key2);//output will be undefined
+
+here in above code we will get undefined becz obj2 don't have key2 to resolve that we can do this:-
+one more way is there to create a empty object and that is :-
+const obj1={
+   key1: "value1",
+   key2: "value2"
+}
+const obj2=Object.create(obj1);// it will create a empty object obj2
+obj2.key3="value3";
+console.log(obj2.__proto__);//here we will get to see that proto of obj2 is obj1
+console.log(obj2.key2);//output will be value2 becz here what will happen is first it will check that in obj2 there is key2 present or not so here key 2 is not present in obj2 so now it will check in obj1 and here we will get the value of key 2 as it is present in obj1 and why it checked in obj1 becz we have written obj1 while creating obj2 
+const obj1={
+   key1: "value1",
+   key2: "value2"
+}
+const obj2=Object.create(obj1);// it will create a empty object obj2
+obj2.key3="value3";
+obj2.key2="uniqueItems";
+console.log(obj2.key2);//output will be unique becz suppose we added key2 in obj2 as well then in the output we will get the value of key2 of obj2 becz firstly the key will be searched in obj2 and then if the key is not found in obj2 then it will serach in obj1.
+
+-->How all this things are happening lets understand:-
+
+In JS what happens is that In Js those things that we doesn't get in its object then it search it in the __proto__ of that object and the proto always reference to another object. 
+
+In the above example that we discussed if the key2 is not present in obj2 then it will search in its __proto__ and in the above exaple the proto contains the obj1 so it will search in obj1 and we will get value of key2.
+
+one more thing we need to know is that in the browser if we see __proto__ or [[prototype]] then both are same but in Js there is one more thing prototype which is completely different.
+
+Now that we have understood this lets solve the problem that we were getting in 1908 line through our understanding the problem was that if we create any method in userMethods then we need to refrerence that method in create_User function and if we forgot to refer then it will create a problem so what we can do is that we can create a Proto of userMethod in create_user function and the problem will be solved if the function will not get the method iside it then it will search in its proto and there it will get the method:-
+
+const userMethods={
+   about:function(){
+      return`${this.firstName} is ${this.age} years old.`;
+   },
+   is18:function(){
+      return this.age>=18;
+   }
+   sing: function(){
+      return "Sare gama padh nisha";
+   }
+}
+function create_User(firstName,  lastName, email,  age, address){
+   const user = Object.create(userMethods);//create a empty object and also a proto of userMethod
+   user.firstName =firstName;
+   user.lastName =lastName;
+   user.email =email;
+   user.age = age;
+   return user;    
+}
+ 
+const user1= create_User("Nandini", "chaudhary", "nandinina040@gamil.com", 22, "house number, colony, pincode, state");
+const user2= create_User("Subhangini", "chaudhary", "subhangini121@gamil.com", 22, "house number, colony, pincode, state");
+const user3= create_User("Mamta", "Arora", "mamtaaroksh@gamil.com", 21, "house number, colony, pincode, state");
+console.log(user1.about());
+console.log(user3.about());
+
+* prototype
+Only functions provide prototype property. Prototype is basically a free space which is provided a function so that we can add our own properties to that function.
+Function in javascript is a combiantion of function + object. lets prove this:-
+
+function hello(){
+   console.log("hello world");
+}
+
+console.log(hello.name());//In js any function provide us with a property name and what this property does is by using this property we can know the name of the function
+
+we can also add our own propety to a function as follow:-
+
+function hello(){
+   console.log("hello world");
+}
+hello.myOwnProperty ="My own property that I have added to hello function";
+console.log(hello.myOWnProperty);//so here we can see that we can treat this myOWnProperty of function as object
+
+//So function provides more usefull properties like apply bind call etc that we have discussed earlier.
+
+// function provide us free space and that free space is a object and that object is called prototype. when we create a function then it provide us a free space called prototype and it is provided so that we can use that free space when we have to add any key value pair related to that function then we can add that to this prototype.
+
+function hello(){
+   console.log("hello world");
+}
+console.log(hello.prototype);//it will create a free space that is a object that have a property constructor(it is a function an its value is the function hello that we have created hello)
+
+now this prototype is a empty object in which we can add propeties as follow:-
+
+function hello(){
+   console.log("hello world");
+}
+hello.prototype.abc = "abc";//property having key abc and value "abc" added to object prototype
+hello.prototype.xyz = "xyz";//property having key xyz and value "xyz" added to object prototype
+hello.prototype.sing = function(){//function is added to object prototype
+   console.log("lalalala");
+};
+console.log(hello.prototype);
+console.log(hello.prototype.sing());//calling sing function of object property.
+
+Now inspite of creating a different objects for storing all the methods we will use the prototype object of a function that is provided by every function
+
+function create_User(firstName,  lastName, email,  age, address){
+   const user = Object.create(create_User.prototype);//create a empty object and a proto of object prototype
+   user.firstName =firstName;
+   user.lastName =lastName;
+   user.email =email;
+   user.age = age;
+   return user;    
+}
+create_User.prototype.about =function(){
+      return`${this.firstName} is ${this.age} years old.`;
+   }
+create_User.prototype.is18=function(){
+      return this.age>=18;
+   }
+create_User.prototype.sing= function(){
+      return "Sare gama padh nisha";
+   }
+const user1= create_User("Nandini", "chaudhary", "nandinina040@gamil.com", 22, "house number, colony, pincode, state");
+const user2= create_User("Subhangini", "chaudhary", "subhangini121@gamil.com", 22, "house number, colony, pincode, state");
+const user3= create_User("Mamta", "Arora", "mamtaaroksh@gamil.com", 21, "house number, colony, pincode, state");
+console.log(user1.about());
+console.log(user3.about());
+
+note :- proto is different from prototype proto is a reference to another object where as prototype is a object
+
+* New keyword:-
+
+Lets understand this with the help of a small example:-
+
+function Create_User(Name, Age){
+   this.Name = Name;
+   this.Age =  Age;
+}
+Create_User.prototype.about = function(){
+   console.log(this.Name, this.age);
+}
+const user1 = new Create_User("Nandini", 22);
+user1.about();
+
+//new keyword does these things:-
+1. create empty object this={}
+2. return this by itself so no need to return something
+3. object.create(create_User.prototype);//this thing we don't have to do in case of new keyword new keyword will automatically do this 
+New keyword will automatically set the value of __proto__ equal to prototype object.
+
+another example:-
+
+function Create_User(firstName,  lastName, email,  age, address){
+   this.firstName =firstName;
+   this.lastName =lastName;
+   this.email =email;
+   this.age = age;    
+}
+Create_User.prototype.about =function(){
+      return`${this.firstName} is ${this.age} years old.`;
+   }
+Create_User.prototype.is18=function(){
+      return this.age>=18;
+   }
+Create_User.prototype.sing= function(){
+      return "Sare gama padh nisha";
+   }
+const user1= new Create_User("Nandini", "chaudhary", "nandinina040@gamil.com", 22, "house number, colony, pincode, state");
+const user2= new Create_User("Subhangini", "chaudhary", "subhangini121@gamil.com", 22, "house number, colony, pincode, state");
+const user3= new Create_User("Mamta", "Arora", "mamtaaroksh@gamil.com", 21, "house number, colony, pincode, state");
+console.log(user1.about());
+console.log(user3.about());
+
+If I want to see the key of any object using for in loop:-
+function Create_User(firstName,  lastName, email,  age, address){
+   this.firstName =firstName;
+   this.lastName =lastName;
+   this.email =email;
+   this.age = age;    
+}
+Create_User.prototype.about =function(){
+      return`${this.firstName} is ${this.age} years old.`;
+   }
+Create_User.prototype.is18=function(){
+      return this.age>=18;
+   }
+Create_User.prototype.sing= function(){
+      return "Sare gama padh nisha";
+   }
+const user1= new Create_User("Nandini", "chaudhary", "nandinina040@gamil.com", 22, "house number, colony, pincode, state");
+//To see all the key of user1 we can see that using for in loop
+for(let key in user1){
+   if(user1.hasOwnProperty(key)){//this will check that  the key is of its own or is of prototype and if it is its own proprty then it will print the key otherwise it will not print the key
+      console.log(key);
+   }
+}
+
+
+for knowledge:-
+ 
+suppose we have a array numbers 
+
+let numbers =[1,2,3];
+console.log(numbers.flat());//like this flat function we have multiple functions for array but one that we need to notice is that we have not defined such function anywhere then from where these functions are coming. Js is getting these functions from prototype of array. but we have studied earlier that only functions have prototype but this is array not a function. lets understand why this is happening.
+console.log(numbers);
+
+Internally Js create array as follow uses array constructor to create the array and using new keyword we can call the method array. if we will see the prototype of the array then we will be able to see all the methods that is already there.
+let numbers =new Array(1,2,3);
+console.log(Array.prototype);
+
+Another way to check the prototype of any array:-
+let numbers =[1,2,3];
+console.log(Object.getPrototypeOf(numbers));
+console.log(numbers);
+
+
+* Class keyword:-
+In JS classes are fake becz what ever we will do using class keyword internally that will be done in same way as new keyword. class constructor can't be invoked without new keyword
+
+How to create a class:-
+
+class CreateUser{
+   constructor(firstName, lastName, email, age){
+   console.log("Constructor called");
+     this.firstName =firstName;
+     this.lastName =lastName;
+     this.email =email;
+     this.age = age;  
+   }
+
+   about(){
+      return`${this.firstName} is ${this.age} years old`;
+   }
+   
+   is18(){
+       return this.age>=18;
+   }
+
+   sing(){
+      return "Sare gama padh nisha";
+   }
+}
+
+const User1 = new CreateUser("Nandini", "chaudhary", "nandinina040@gmail.com", 22);
+console.log(User1.about());
+console.log(Object.getPrototypeOf(User1));
+
+Another example of class:-
+
+class Animal{
+   constructor(Name, age){
+      this.Name =Name;
+      this.age =age;
+   }
+
+   eat(){
+      return `${this.Name} is eating`;
+   }
+   isSuperCute(){
+      return this.age<=2;
+   }
+   isCute(){
+      return true;
+   }
+}
+const Animal1 = new Animal("Tommy", 10);
+cosnole.log(Animal1.eat());
+
+
+Now suppose we have to create a class dog which have same property and methods as animal then inspite of creating a new dog class we can inherite the super class using extend keyword. if Js doesn't get the methods in its own class then it will see in the extended class that is animal. Dog here is sub class and Animal here is super class
+
+class Animal{
+   constructor(Name, age){
+      this.Name =Name;
+      this.age =age;
+   }
+
+   eat(){
+      return `${this.Name} is eating`;
+   }
+   isSuperCute(){
+      return this.age<=2;
+   }
+   isCute(){
+      return true;
+   }
+}
+class Dog extends Animal{
+
+}
+
+const Dog1 = new Dog("Tom" , 1);
+console.log(Dog1.eat());
+
+* Super 
+It basically denote to parent class.
+Suppose we want one more property speed in our Dog class then we will do that as follow:-
+class Animal{
+   constructor(Name, age){
+      this.Name =Name;
+      this.age =age;
+   }
+
+   eat(){
+      return `${this.Name} is eating`;
+   }
+   isSuperCute(){
+      return this.age<=2;
+   }
+   isCute(){
+      return true;
+   }
+}
+class Dog extends Animal{
+   constructor(Name, age, speed){
+      super(Name, age);//this will add name and age 
+      this.speed = speed;
+   }
+   
+   run(){
+      console.log(this.speed);
+      return `${this.Name} is running at speed of ${this.speed} Kmph`;
+   }
+}
+
+const Dog1 = new Dog("Tom", 1, 45);
+console.log(Dog1.run());
+
+* Same method in subclass
+
+class Animal{
+   constructor(Name, age){
+      this.Name =Name;
+      this.age =age;
+   }
+
+   eat(){
+      return `${this.Name} is eating`;
+   }
+   isSuperCute(){
+      return this.age<=2;
+   }
+   isCute(){
+      return true;
+   }
+}
+class Dog extends Animal{
+   constructor(Name, age, speed){
+      super(Name, age);//this will add name and age 
+      this.speed = speed;
+   }
+    
+   eat(){
+      return `${this.Name} is Modified eating`;
+   }
+   
+   run(){
+      console.log(this.speed);
+      return `${this.Name} is running at speed of ${this.speed} Kmph`;
+   }
+}
+
+const Dog1 = new Dog("Tom", 1, 45);
+console.log(Dog1.run());
+console.log(Dog1.eat());// if we have same eat method in parent class as well as in sub class then if we call the method using the object of sub class then sub class method will be called.
+
+*Getter and setters
+
+class Person{
+   constructor(firstName, lastName, age){
+      this.firstName= firstName;
+      this.lastName = lastName;
+      this.age = age;
+   }
+
+   fullName(){
+      return`${this.firstName} ${this.lastName}`;
+   }
+}
+const person1 = new Person("Nandini", "chaudhary", 22);
+
+console.log(person1.firstName);//to access the properties of the class we just write objectname.property 
+console.log(person1.fullName());//to access any method of the call we have to use the parentheses but if we want to access the method in same way we acess the properties of the class the we use get keyword at the start of that method to which we want to call as shown in next code.
+class Person{
+   constructor(firstName, lastName, age){
+      this.firstName= firstName;
+      this.lastName = lastName;
+      this.age = age;
+   }
+
+   get fullName(){
+      return`${this.firstName} ${this.lastName}`;
+   }
+}
+const person1 = new Person("Nandini", "chaudhary", 22);
+
+console.log(person1.firstName);
+console.log(person1.fullName);//we can access the full name fuction in the same way as we can access the properties of the class.
+
+Now suppose I want to change the firstName and last name of the person after creating the object then we can do that  as follow:-
+class Person{
+   constructor(firstName, lastName, age){
+      this.firstName= firstName;
+      this.lastName = lastName;
+      this.age = age;
+   }
+
+   get fullName(){
+      return`${this.firstName} ${this.lastName}`;
+   }
+
+   setName(firstName, lastName){
+       this.firstName=firstName;
+       this.lastName=lastName;
+   }
+}
+const person1 = new Person("Nandini", "chaudhary", 22);
+console.log(person1.firstName);
+console.log(person1.lastName);
+person1.setName("Subhangini", "Chaudhary");
+console.log(person1.firstName);
+console.log(person1.lastName);
+
+the same thing can be done as follow:-
+class Person{
+   constructor(firstName, lastName, age){
+      this.firstName= firstName;
+      this.lastName = lastName;
+      this.age = age;
+   }
+
+   get fullName(){
+      return`${this.firstName} ${this.lastName}`;
+   }
+
+   setName(firstName, lastName){
+       this.firstName=firstName;
+       this.lastName=lastName;
+   }
+}
+const person1 = new Person("Nandini", "chaudhary", 22);
+console.log(person1.firstName);
+console.log(person1.lastName);
+person1.firstName="Subhangini";
+person1.lastName="Chaudhary";
+console.log(person1.firstName);
+console.log(person1.lastName);
+
+Now as we change the property fullname and lastname of the class if i want to change the full name method of the class that is as i change the full name automatically full name should change in fullname function then we can make use of setter.
+
+class Person{
+   constructor(firstName, lastName, age){
+      this.firstName= firstName;
+      this.lastName = lastName;
+      this.age = age;
+   }
+
+   get fullName(){
+      return`${this.firstName} ${this.lastName}`;
+   }
+
+   set fullName(fullName){
+       const [firstName, lastName]= fullName.split(" ") //when ever in the full name it will get a space then it will split the name and store it in a list([Nandini, Chauddhary])
+       this.firstName= firstName;
+       this.lastName= lastName;
+   }
+   
+}
+const person1 = new Person("Nandini", "chaudhary", 22);
+
+person1.fullName="Subhangini Chaudhary";
+console.log(person1);
+
+*Static methods and properties
+The methods of a class can only be called by its object that is person1. but we can also make such methods which are directly related to its class and to call those method we don't need object. 
+class Person{
+   constructor(firstName, lastName, age){
+      this.firstName= firstName;
+      this.lastName = lastName;
+      this.age = age;
+   }
+   static classInfo(){ //static method
+      return "this is person class";
+   }
+   static desc = "this is description";//static property
+   get fullName(){
+      return`${this.firstName} ${this.lastName}`;
+   }
+
+   set fullName(fullName){
+       const [firstName, lastName]= fullName.split(" ");
+       this.firstName= firstName;
+       this.lastName= lastName;
+   }
+    eat(){
+      return `${this.firstName} is  eating`;
+   }
+   
+}
+const person1 = new Person("Nandini", "chaudhary", 22);
+console.log(person1.eat());
+console.log(Person.classInfo());//classinfo has been directly called using the class
+console.log(Person.desc);//desc has been directly called using the class
+
+
+* How Js work :-
+
+How Javascript code executes:-
+Steps how Js code executes:-
+Step1:- first step is code compilation phase. Compilation takes place in three steps :-
+  1. Tokenizing / Lexing:- Here we divide our code in small chunks called tokens.
+  2. Parsing:- Here those small chunks are understood and Abstract syntax tree is created.
+  3. Code generation:- From this abstract syntax tree(AST) a executable code is generated.
+
+  Why to do compilation:-
+1. for Early error checking like syntax error and all.
+2. Determining appropriate scope for variable(DASV). that is to determine what is the scope of each and every variables that we have declared in the code. 
+Note:- Before the execution of the code JS knows what is the scope of all the variables. But variable has not been created yet but scope of that variable is known before.
+
+step2:- code execution phase:- 
+In JS code executes inside execution context. So we need  to create execution context to execute the code. The first execution context that is being created is Global execution context(GEC). 
+
+Now lets understand what is this Global execution context and how it is created:- 
+It is created in two steps:-
+1.Creation phase of GEC(global memory) :- During the creation phase of GEC all the variables whose scope are Global is created  and it's value will be undefined. during the creation of GEC the value of 'this' is set to Window (in case of browser it can vary in case of node JS. window is a global object.   
+
+To understand how JS code executes lets write some piece of code:-
+console.log(this);
+console.log(window);
+console.log(firstName); //value will be undefined 
+var firstName ="Nandini";//This variable has a global scope and before execution of the code this is known that it has a global scope.
+
+lets understand according to above example what happen in creation phase :-
+during creation phase the variable having global scope is created that means here we can see that we have a variable firstName whose scope is global so this variable is created and its value is set to undefined and value of 'this' will be equal to window object.
+
+
+2. code execution phase :- Js is a syncronous programming language and single threaded syncronous means until and unless one line is not completely executed till then we can't start the execution of second line. code execution is done line by line. 
+console.log(this);----->1
+console.log(window);----->2
+console.log(firstName);------->3
+var firstName ="Nandini";------>4
+console.log(firstName);------>5
+
+lets execute the above code line by line and see the output on console:-
+ 1) {} -->window object will be printed(it will be printed on console)
+ 2) window object will be printed(it will be printed on console)
+ 3) undefined(it will be printed on console)
+ 4) variable firstName value will be change from undefined to Nandini but nothing will be printed on console or anywhere.
+5) Nandini (it will be printed on console)
+
+
+
+Lets analyse one more code:-
+
+console.log(this);
+console.log(window);
+console.log(myFunction);
+console.log(fullName);
+
+function myFunction(){
+   console,log("this is my function");
+}
+
+var firstName = "Harshit";
+var lastName = "sharma";
+var fullName = firstName + " " + lastName;
+console.log(fullName);
+
+step1 :- compilation will be done for early error checking and Determining appropriate scope for variables.
+so while Determining scope firstly Global scope will be determined :-
+In above code global scope variable and functions are:-
+
+   variable           function 
+1. firstName       1. myfunction      
+2. lastName   
+3. fullName  
+
+Till now nothing has been created only this is known that all the things are present with us.
+--->Lexical scope:- scope is determined by the way we have written our code. if it is written inside a function then scope will be function scope and if not written inside any function then global scope.
+
+step 2:-Code execution phase:-
+here firstly Global execution context is created and GEC is added in the stack.
+
+GEC is created in two steps:-
+1. Global memory :-
+console.log(this);
+console.log(window);
+console.log(myFunction);
+console.log(fullName);
+
+function myFunction(){
+   console,log("this is my function");
+}
+
+var firstName = "Harshit";
+var lastName = "sharma";
+var fullName = firstName + " " + lastName;
+console.log(fullName);
+
+according to above code lets see what happen while creation of GEC:-
+creation of Global memory:-
+  1. window object 
+  2. this : window
+  3. firstName : undefined
+  4. lastName : undefined
+  5. fullName : undefined
+  6. myfunction function will also be added in memory before its execution
+
+  Note :- Js store the variable in the object that is key value pairs and is called environment record.
+  
+  2. Code execution phase:-
+  Here code will be executed line by line and output will be printed on console:-
+   console.log(this);---->1
+   console.log(window);---->2
+   console.log(myFunction);---->3
+   console.log(fullName);---->4
+
+   function myFunction(){  ----------------
+      console,log("this is my function");  |------>5
+   }                       ----------------
+
+   var firstName = "Harshit";------>6
+   var lastName = "sharma";------>7
+   var fullName = firstName + " " + lastName;------>8
+   console.log(fullName);----->9
+
+lets execute the code line by line:-
+ 1. this : window object will be printed on console
+ 2. window will be printed on console
+ 3. the whole myFunction will be printed on the console as it is like this :-
+               function myFunction(){
+                  console,log("this is my function");
+               }
+ 4. undefined
+ 6. here value of firstName will be changed from undefined to Harshit in global memory but will not be printed on console.
+ 7.here value of lastName will be changed from undefined to sharma in global memory but will not be printed on console.
+ 8.here value of fullName will be changed from undefined to "harshit sharma" in global memory but will not be printed on console.
+ 9. harshit sharma  will be printed on console
+
+ * Hoisting:-
+ In Js Hoisting happens what does that mean lets understand with this example:-
+
+   console.log(this);---->1
+   console.log(window);---->2
+   console.log(myFunction);---->3
+   console.log(fullName);---->4
+
+   function myFunction(){  ----------------
+      console,log("this is my function");  |------>5
+   }                       ----------------
+
+   var firstName = "Harshit";------>6
+   var lastName = "sharma";------>7
+   var fullName = firstName + " " + lastName;------>8
+   console.log(fullName);----->9
+
+   In the above code we can see that firstName, lastName, fullName are being created in  line 6, 7 and 8 but we were able to print them before hand in line no. 4 why is this happening becz while creation of global execution context firstName, lastName, fullName all the three variable has been created because they were created using var and their values were set to undefined. means till now code is not been executed execution will happen after creation of GEC till now variable were created in the global memory and there values were undefined till now thats why we were able to print their value before hand.
+so hoisting means before execution of the code these variables and functions are being stored in the memory and because of hoisting  we were able to use the variables and function before their execution.
+
+Note :- as we know that GEC is added on stack before the execution of code so after the execution of code it is removed from the stack.
+
+
+lets Analyse one more code:-
+
+console.log(myFunction);
+//function expression
+var myFunction = function(){
+   console.log("this is my function");
+}
+
+step 1:- compilation of code is done where error checking is done and DASV(determine appropriate scope for variable)
+where first of all global scope is determine so here in the global scope we have a function myFunction
+
+step 2:- GEC creation is done so for that GEC is added in the stack.
+two steps takes place here:-
+1.Global memory:- while creation of GEC some things get store in the memory.
+    1. window object is stored in memory
+    2. this: window it also get store in memory
+    3. myfunction : undefined(because here the function is created using function expression and it is created using var so it value is stored undefined in memory)
+   
+    Note:- 
+    when function is made using function declaration then while creation of GEC the function will be stored as it is in the global memory. but when function is made using function expresion then while creation of GEC the function will be stored as undefined (if crated using var) in global memory.
+
+2. Code execution:-
+
+console.log(myFunction);---->1 line
+var myFunction = function(){   ---------
+   console.log("this is my function");  |---->2 line
+}                              ---------
+console.log(myFunction);
+
+
+1. undefined will be printed on console
+2. when line 2 will be executed then myFunction value will be changed from undefined to whole function as it is but nothing will be printed on screen.
+3. whole myfunction will be printed on console as it is :-
+             function(){
+                  console.log("this is my function");
+             }
+
+
+* Lets analyse one more example:-
+
+console.log(firstName);
+let firstName ="Nandini";
+console.log(firstName);
+
+step 1:- Error checking is done and determine global scope for variables  where firstly global scope variable are determined as follow:-
+   1. firstName 
+
+step 2:- creation of global execution context and added to stack.
+1. global memory:-
+  1. window object
+  2.this :window
+  3. firstName: uninitialized(it doesn't mean that firstname variable is not created or has not been added in memory but it means that it has been created and added in memory but it is uninitialized and this is happening becz firstName is created using let thats why it is happening )
+
+  Note :- variables created using let get created in memory but they are uninitialized and until and unless they are not initialized they can't be used. 
+
+  we have seen earlier that hoisting is possible in case of var but is hoisting possible in case of let and const so the answer is yes becz hoisting these variables that are being created usning let and const are stored in the memory but they are uninitialized and they will not be used untile and unless they are not initialized.
+
+2.code execution:-
+      console.log(firstName);--->1
+      let firstName ="Nandini";--->2
+      console.log(firstName);--->3
+   lets execute the code line by line 
+   1. Error will be seen on the console and the error looks like:-
+      Uncaught ReferenceError: Cannot access 'firstName' before initialization
+   2. nothing will be printed on console but in global memory the value of firstName will be changed from uninitialized to Nandini.
+   3. Nandini
+
+
+*TDZ (Temporal dead zone)
+
+It means until and unless the variable is uninitialized till then variable is in TDZ. or in other words untile and unless the variable is not initialized the it remain in TDZ and as it get initialzed it come out of TDZ.
+ 
+console.log(firstName);// here firstName is in TDZ 
+let firstName ="Nandini";
+console.log(firstName);// it came out of TDZ
+
+
+Till now we were only talking about Global execution context now we will understand function exection context:-
+
+*Function Execution context:-
+
+let foo="foo";
+console.log(foo);
+function getFullName(firstName, lastName){
+   let myVar ="var inside func";
+   console.log(myVar);
+   const fullName = firstName + " "+ lastName;
+   return fullNAme;
+}
+
+const personName =getFullName("Nandini", "chaudhary");
+console.log(personName);
+
+step 1:- compilation and Global scope and function scope determination.
+ Global Scope                  function scope 
+ 1. foo                         1. myVar
+ 2. getFullName                 2.fullName
+ 3. personName                    
+
+ step 2:-
+ creation of GEC and FEC (function execution context):
+ In GEC we have two steps 1. Global memory phase  2. code execution phase
+ In Js we have maintained callstack to see which execution phase is ongoing. here we add that phase in stack which is in execution. At first GEC is created and executed so firstly GEC is added in stack then FEC.
+
+ Global memory phase:-
+ 1. window object is set by browser
+ 2. this: window
+ 3. foo : uninitialized becz it's created using let
+ 4. getfullname the whole function will get stored in memory as it is because the function is created using function declaration.
+ 5. personName : uninitialized
+
+ Code Execution phase:-
+ lets execute the code line by line:-
+
+let foo="foo";---->1
+console.log(foo);----->2
+function getFullName(firstName, lastName){---------
+   let myVar ="var inside func";                   |
+   console.log(myVar);                             |
+   const fullName = firstName + " "+ lastName;     |---->3
+   return fullNAme;                                |
+}                                        ----------
+
+const personName =getFullName("Nandini", "chaudhary");----->4
+console.log(personName);---->5
+
+output of each line:-
+1. Here nothing will be printed on console but the value of foo will be change fron uninitialized to Foo in the memory.
+2. foo will be printed on console
+3. Nothing will happen
+4. In this line we have to call a function and what ever value will be returned from the function will be stored in the personName variable. so whenever a function is being called in JS then a new execution context will be created called function Execution context. And in the Call stack FEC will be stored. 
+  |
+   ------->     while creation of Function execution context   also we have two phase:-
+         1.Local Memory creation :-
+         In case function while creation of memory
+            1. the first thing that will happen in the memory is a array like object(array like object are those which can be accessed using indexing and have length property) argument will be created which is a object and it stores all the arguments. here in above example while calling the function we have passed two arguments "Nandini" "chaudhary" then those argument will be store in the argument. argument : [.....]
+            2. The value to the parametes paseed to the function will be stored in the memory:- both the variables are called local variable
+            firstName: Nandini
+            lastName: chaudhary
+            3. myVar : uninitialized
+            4. fullName : uninitialized
+
+         2. Code Execution phae:-
+         Lets execute all the function line by line:-
+         
+         function getFullName(firstName, lastName){---------
+            let myVar ="var inside func";--->1              |
+            console.log(myVar);--->2                        |
+            const fullName = firstName + " "+ lastName;--->3|---->3
+            return fullNAme;--->4                           |
+         }                                        ----------
+         1. In line no. 1 nothing will be printed on the console but in the local memory the value of myVar will be changed from uninitialized to var inside func.
+         2. var inside func (printed on console)
+         3. In line no. 3 nothing will be printed on the console but in the local memory the value of fullName will be changed from uninitialized to Nandini chaudhary.
+         4. Nandini chaudhary(will be returned to personName constant and in the global memory the value of person name will be changed from uninitialized to Nandini chaudhary)
+
+         Now as the execution of fuction is completed and finished we will pop FEC from the stack and the thread will again jump to GEC 
+
+5. Last line of GEC will be executed and Nandini chaudhary will be printed on console.
+
+
+* Lexical Environment, Scope chain 
+
+to understand this lets analyse a piece of code:-
+const lastName = "Chaudhary";
+const printName = function(){
+   const firstName ="Nandini";
+   console.log(firstName);
+   console.log(lastName);
+   }
+printName();
+
+
+Creation of GEC (global execution context)
+1. Global Memory creation:-
+      1. window: {}
+      2. this : window
+      3. lastName : uninitialized
+      4. printName : uninitialized
+2. code execution:-
+      1. nothing will be printed on the console but in the Global memory the value of lastName will be changed from uninitialized to Chaudhary.
+      2. nothing will be printed on the console but in the Global memory the value of printName will be changed from uninitialized to function .
+      3. Here function is called so now new execution context FEC will be created. and FEC will be pushed on stack.
+
+      creation of FEC:-
+      1. local memory creation:-
+            1. array like object argument is stored in memory
+            2. firstName : uninitialized
+      2. Code Execution:-
+            1. nothing will be printed on the console but in the local memory the value of firstName will be changed from uninitialized to Nandini.
+            2. Nandini will be printed on console
+            3. Chaudhary will be printed on console //here lastname will not be present in local memory so it search in its lexical environment i.e global memory.
+
+* Closures:-
+
+//Function can return function
+
+function outerFunc(){
+    function innerFunc(){
+       console.log("hello world");
+    }
+   return innerFunc;
+}
+const ans = outerFunc();
+console.log(ans);
+
+//Here in the above code outer function is returning innerFunction so ans will be a constant that stores the whole function and we can call innerFunction by calling ans() function.
+
+Lets Analyse the next piece of code:-
+
+function printFullName(firstName, lastName){
+     function printName(){
+        console.log(firstName, lastName);
+     }
+     return printName;
+}
+const ans = printFullName("Nandini", "Chaudhary");
+ans();
+
+Creation of GEC(global execution context):-
+there are phase while creation of GEC:-
+1.Global Memory creation Phase:-
+  1. window value will be set at first
+  2. this : Window
+  3. prinfullName function will be stored in memory
+  4. ans : uninitialized
+2. Code execution phase:-
+
+function printFullName(firstName, lastName){ -------
+     function printName(){          ---             |     
+     console.log(firstName, lastName); |-->1        |
+     }                              ---             |--->1
+     return printName;-->2                          |
+}                                            -------
+const ans = printFullName("Nandini", "Chaudhary");---->2
+ans();---->3
+   1. Nothing will happen when line 1 is executed 
+   2. Now FEC creation will be done when line 2 is executed which again have two phase :-
+       1.Local Memory creation:-
+             1. argument : ["Nandini", "Chaudhary"];(array like object argument is created at start).
+             2. firstName : Nandini
+             3. lastName : Chaudhary
+             4. printName function will be stored in the local memory
+      2. Code Execution phase:-
+            1.Nothing will happen already done
+            2. printName function will be returned to the constant ans so value of and will change from uninitialized to printName function.
+         Now FEC will be poped out of stack and will be deleted as the function execution is completed.
+    3. when we will execute line 3 printName function will be called and again FEC will be created and again there will be two phases:-
+             1.Local Memory creation:-
+                 Nothing will be store in this memory
+             2. Code Execution phase:-
+                function printName(){               
+                     console.log(firstName, lastName); 
+                     } 
+                 but here one problem occurs that firstName and lastName value is not present in the Local Memory of the FEC and nietherlexical environment i.e in the GEC.
+
+ So here closures plays a very imp role:-
+ When ever a function returns another function then the returning function will Return the function as well as the variables present in the local memory of teh function that is returing that function.
+
+   function printFullName(firstName, lastName){
+     function printName(){
+        console.log(firstName, lastName);
+     }
+     return printName;
+}
+const ans = printFullName("Nandini", "Chaudhary");
+ans();
+ to understand closure perfectly lets understand above code:-
+ when printFullName function will return printName function then it will return two thing :-
+      1. whole printName function
+      2. the variable present in the local memory of printFull name i.e 
+               1. firstName : Nandini
+               2. lastName : Chaudhary
+
+so constant ans value will be changed form uninitialsed to whole printName function and  firstName and lastName values.     
+
+So because of closure we were able to access the value of firstName and lastName in printName function even if firstName and lastName variable was not present in its loacal memory the printFullName function will.
+
+
+How can we link JS file to Html file:-
+there are multiple ways to link Js file to html file:-
+
+1.Adding script tag in head tag as follow:-  <script src=""><script> 
+But adding script tag in head will cause error becauese first of all all the JS file will be processed and then the htmle file will be processed will will cause error becz all the functionalities are already been precessed.
+2. Adding script tag inside the end of body tag. but here also there is problem and the problem is that firstly HTML file eill be parsed and will take some time to get parsed completely then the JS file will be parsed and then JS file will be executed and will take time to get pased and execute completely so this will cause some performance issues. Here files were getting paresd in syncronus way.
+3. Adding script tag in head tag but in asyncrous way as follow:-
+<script src="" async></script>
+Now here both parsing of HTML and loading of JS file will take place simultaneously. But here also there is a problem suppose the loading of JS file is completed but still HTML file parsing is not yet completed then the parsing will get stoped and the loaded JS file will be first executed so the rest of html file parsing will get stoped and whole html file will not be loaded completely.
+4.Adding script tag in head tag by using defer as follow:-
+<script src="" defer></script>
+Now here both parsing of HTML and loading of JS file will take place simultaneously. Now here there is no problem because as the loading completes before the parsing is completed still firstly parsing will be completed then the js file will be executed so no problem arises here.
+
+* DOM
+Document object model:- 
+When Browser gets the HTML file Every element that we can see on the HTML page is parsed by the browser and a object is created called Document object which contains all the elements that is present in the html page and this object get stored as a property in window object. And by using this document object we can select any element. 
+
+We have so many methods in this document object by using which we can select any element in the HTML page. document is a object which furture contains multiple objects
+
+
+1. select element using get element by id
+We can select a Element using id and This method will take name of ID as a input. It only works wit ID.
+
+document.getElementById("name_of_ID");
+
+for example:-
+const mainHeading = document.getElementById("main-heading");//this will return a object and that object will get store in the document object.
+console.log(mainHeading);
+console.dir(mainHeading);//this will give the actual reersention of mainHeading
+console.log(typeof mainHeading);//this will give the type of mainHeading that is object.
+
+2. select element using query selector
+This methods works with everything like ID, Class etc.
+
+document.querySelector("name_of_Any_Element");
+before the name we have to use:-
+ # it its a ID- document.querySelector("#main-heading");
+ . if its a class-document.querySelector(".header");
+
+const mainHeading = document.querySelector("#main-heading");
+console.log(mainHeading);
+console.dir(mainHeading);
+console.log(typeof mainHeading);
+
+As we know that we can use same class name for more than one element but Id can be used only for one element.
+
+const mainHeading = document.querySelector(".nav-item");
+console.log(mainHeading);//this will give the first element of class nav-item.
+
+to get all the elements having same class we use:-
+const mainHeading = document.querySelectorAll(".nav-item");
+console.log(mainHeading);//this will give Nodelist of all the element of class nav-item.
+
+*change text:-
+const mainHeading = document.getElementById("main-heading");
+console.log(mainHeading.textContent);//this will give the heading of the element having Id main-heading
+mainHeading.textContent="This is something else";
+console.log(mainHeading.textContent);//this will give the changed heading of the element having Id main-heading
+
+*InnerText
+const mainHeading = document.getElementById("main-heading");
+console.log(mainHeading.innerText);//this will give only the inner text
+
+* Change the style of elements
+We have a property named style throgh which we can change the style of any element and this style property contains all the style present for any element present on HTML page. This stlye a object in itself and it contains a lot of css properties whose value we can set.
+
+const mainHeading = document.querySelector("div.headline h2");
+console.log(mainHeading.style);
+mainHeading.style.color= "black";
+mainHeading.style.backgroundColor="green";//make sure not to write backgroundColor as background-color becz every property of style object are written in camel case 
+
+
+* get and set attribute
+we can get the value of attribute of any html element and we can also change or set value of attribute of any element using get and set.
+
+get any attribute value:-
+const link = document.querySelector("a");
+console.log(link.getAttribute("href"));
+
+set any attribute value:-
+link.setAttribute("href", "https://www.youtube.com/watch?v=Llsq1y-HWs4&t=14710s");
+console.log(link.getAttribute("href"));
+
+*get multiple elements using getElements by class name
+
+const navItems = document.getElementsByClassName("nav-item");//this will reutrn's a html collection (basically it is a array like object but not array  so we can use indexing)
+console.log(navItems);
+
+*get multiple element items using queryselectorAll
+
+const navItems = document.querySelectorAll(".nav-item");//this will reutrn's a Node list (basically it is a array like object but not array as it is array like object so we can use indexing )
+console.log(navItems);
+console.log(navItems[1]);
+
+//array like object--> object on which we can perform indexing, length property.
+
+//loop
+To iterate through multiple elements we can use :-
+
+Iterate through HTMLCollection:-
+* Simple for loop:-
+const navItems = document.getElementsByTagName("a");
+console.log(navItems);
+for(let i=0; i<navItems.length; i++){
+   const navItem=navItems[i];
+   navItem.style.backgroundColor="rgb(211, 206, 206)";
+   navItem.style.color="black";
+   navItem.style.fontWeight="bold";
+   navItem.style.padding='8px 10px';
+   navItem.style.borderRadius='50px';
+}
+* for of loop
+const navItems = document.getElementsByTagName("a");
+console.log(navItems);
+for(let navItem of navItems)
+{
+  navItem.style.backgroundColor="rgb(211, 206, 206)";
+   navItem.style.color="black";
+   navItem.style.fontWeight="bold";
+   navItem.style.padding='8px 10px';
+   navItem.style.borderRadius='50px';
+}
+* forEach :- We can't use forEach method to iterate through HTMLCollection. if we want to use forEach to iterate through HTMLCollection then we need to convert HTMLcollection into array first as follow:-
+
+let navItems = document.getElementsByTagName("a");
+navItems =Array.from(navItems);
+console.log(Array.isArray(navItems));
+navItems.forEach((navItems)=>{
+   navItems.style.backgroundColor="rgb(211, 206, 206)";
+   navItems.style.color="black";
+   navItems.style.fontWeight="bold";
+   navItems.style.padding='8px 10px';
+   navItems.style.borderRadius='50px';
+})
+
+
+*Iterate through Nodelist:-
+
+*simple for loop:-
+const navItems = document.querySelectorAll("a");
+for(let i=0; i<navItems.length; i++)
+{
+   const navItem=navItems[i];
+   navItem.style.backgroundColor="rgb(211, 206, 206)";
+   navItem.style.color="black";
+   navItem.style.fontWeight="bold";
+   navItem.style.padding='8px 10px';
+   navItem.style.borderRadius='50px';
+}
+
+*for of loop:-
+const navItems=document.querySelectorAll("a");
+for(let navItem of navItems){
+   navItem.style.backgroundColor="rgb(211, 206, 206)";
+   navItem.style.color="black";
+   navItem.style.fontWeight="bold";
+   navItem.style.padding='8px 10px';
+   navItem.style.borderRadius='50px';
+}
+
+* forEach:-
+const navItems=document.querySelectorAll("a");
+navItems.forEach((navItems)=>{
+   navItems.style.backgroundColor="rgb(211, 206, 206)";
+   navItems.style.color="black";
+   navItems.style.fontWeight="bold";
+   navItems.style.padding='8px 10px';
+   navItems.style.borderRadius='50px';
+})
+
+* Inner HTML:-
+const heading = document.querySelector(".headline");
+console.log(heading.innerHTML);
+heading.innerHTML = "<h2>Hello BRO </h2>";
+heading.innerHTML += "<button class='btn'>Learn More</button>";
+console.log(heading.innerHTML);
+
+DOM:-
+const rootNode = document.getRootNode();
+//console.log(rootNode);
+const htmlElementNode1 = rootNode.childNodes[1];
+//console.log(htmlElementNode1);
+const htmlElementNode2= rootNode.childNodes[1];
+//console.log(htmlElementNode2);//gives a node list
+const headElementNode = htmlElementNode1.childNodes[0];
+const textNode1 = headElementNode.childNodes[1];
+const textNode2 = headElementNode.childNodes[3];
+const textNode3 = headElementNode.childNodes[5];
+const textNode4 = headElementNode.childNodes[7];
+const textNode5 = headElementNode.childNodes[9];
+const textNode6 = headElementNode.childNodes[11];
+console.log(textNode1);
+console.log(textNode2);
+console.log(textNode3);
+console.log(textNode4);
+console.log(textNode5);
+console.log(textNode6);
+All the even position child of head tag is a text i.e space (new line) becz In dom each new line is also treated as child. 
+console.log(htmlElementNode1.parentNode);//this will give parent of html element i.e document
+
+
+//sibling relation
+console.log(htmlElementNode1.parentNode);//this will give parent of html element i.e document
+console.log(headElementNode.nextSibling);//this will give the next sibling of head node that is text
+console.log(headElementNode.nextSibling.nextSibling);//this will give the next sibling of text node that is body
+console.log(headElementNode.nextElementSibling)//this will ignore the newline and space sibling and will only give the next eliment i.e body.
+
+//practice 
+const some = document.querySelector("h1");
+const parentSome = some.parentNode;
+parentSome.style.backgroundColor = 'rgb(20, 58, 56)';
+ 
+//we can directly select body
+const body =document.body;
+console.log(body);
+
+//we can apply query selector on any element that is present in the web page.
+const head=document.querySelector("head");
+consloe.log(head);
+const title = head.querySelector("title");
+console.log(title);
+
+//To only get the element child node and not the Newline and space child of any node we can use children property
+
+const Root = document.getRootNode();
+const htmlElement = Root.children;
+const head =htmlElement.children;
+const headChild = head.children;
+console.log(headChild);
+
+//If we want to see No. of classed given to a paticular element then we can use classList property
+
+const todoSection = document.querySelector(".todo-section");
+console.log(todoSection.classList);
+
+//To give class to any element using javascript using add method we can do as follow:-
+const todoSection = document.querySelector(".todo-section");
+todoSection.classList.add('bgdark');//giving class through Js 
+
+//To Remove class from any element using javascript we can do as follow:-
+
+const todoSection = document.querySelector(".todo-section");
+console.log(todoSection.classList);
+todoSection.classList.remove("abc");//to remove any calass through Js
+console.log(todoSection.classList);
+
+//If we want to see wheater a class exist in a classList or not then we can use contains method
+const todoSection = document.querySelector(".todo-section");
+todoSection.classList.contains("abc");
+
+//Toggle add's a class if the class doesn't exist for an element and reomoves if the class exist for the element.
+const todoSection = document.querySelector(".todo-section");
+todoSection.classList.toggle("bgdark");//this will add the class bgdark in the classList as this class doesn't exist in the classList
+todoSection.classList.toggle("bgdark");//this will remove the class bgdark from the classList as this class exist in the classList
+
+*Add new HTML elements to page
+
+1. innerHTML to add html element
+const todoList = document.querySelector(".todo-list");
+// console.log(todoList.innerHTML);
+// todoList.innerHTML = "<li>New todo</li>";//this will overwrite the previous text and set it to new todo but we don't want this we want to add the new todo in form of list
+todoList.innerHTML += "<li>New todo</li>";
+todoList.innerHTML += "<li>todo2</li>";
+
+
+
+//When you should use it, when you should not
+->>we should not use inner html to add html elements to already existing element becz it causes performance issues.
+->> we can use it to change any any inner html element completely. 
+
+2. document.createElement() 
+const newTodoItem = document.createElement("li"); const newTodoItemText = document.createTextNode("Teach Student");
+const todoList = document.querySelector(".todo-list");
+newTodoItem.append(newTodoItemText);
+todoList.append(newTodoItem);
+console.log(newTodoItem);
+            //or
+const newTodoItem = document.createElement("li");
+newTodoItem.textContent = "Teach Students";
+const todoList = document.querySelector(".todo-list");
+todoList.append(newTodoItem);
+console.log(newTodoItem);
+
+//we have two methods append and prepend.... append add's new element in the end of list and prepend add the element in the begining of list.
+
+const newTodoItem = document.createElement("li");
+newTodoItem.textContent = "Teach Students";
+const todoList = document.querySelector(".todo-list");
+todoList.prepend(newTodoItem);
+console.log(newTodoItem);
+
+//to remove any element from list we use:-
+const todo1 = document.querySelector('.todo-list li");
+todo1.remove();
+
+//we can also insert element before a list using before and after a list using after
+const newTodoItem = document.createElement("li"); newTodoItem.textContent = "Teach students";
+const todoList = document.querySelector(".todo-list");
+todoList.before(newTodoItem);
+
+
+const newTodoItem = document.createElement("li"); newTodoItem.textContent = "Teach students";
+const todoList = document.querySelector(".todo-list");
+todoList.after(newTodoItem);
+
+3. elem.insertAdjacentHTML(where, html)
+  ->>beforbegin
+  ->>afterbegin
+  ->>beforeend
+  ->>afterend
+
+const todoList = document.querySelector(".todo-list");
+todoList.insertAdjacentHTML("beforeend", "<li>Teach Student</li>");
+todoList.insertAdjacentHTML("afterbegin", "<li>Teach Myself</li>");
+todoList.insertAdjacentHTML("beforebegin", "<li>Teach</li>");
+todoList.insertAdjacentHTML("afterend", "<li>Teach something</li>");
+
+
+* Clone Nodes 
+
+why does this clone nodes came into existence becz through the below code we can't append and prepend the same element li simuntaniously.  
+const ul = document.querySelector(".todo-list");
+const li = document.createElement("li");
+li.textContent = "new todo";
+ul.append(li);
+ul.prepend(li);
+
+//so to solve above problem first we will create one element and will make a clone of it and then we can append and prepend the same element simuntaneously.
+
+const ul = document.querySelector(".todo-list");
+const li1 = document.createElement("li");
+li1.textContent ="new todo";
+const li2 = li1.cloneNode();//this will only give li element not the text inside the li to get the text inside the li we use true inside the braces of method cloneNode
+const li2 = li1.cloneNode(true);//here true is written to get the inner child of li i.e text of li tag. true is written for deep cloning.
+ul.append(li1);
+ul.prepend(li2);
+
+
+//Some old methods to support poor IE(internet explorer)
+1. appendChild
+2. insertBefore
+3. replaceChild
+4. removeChild
+
+all this methods came into existence because append, prepend, remove, before, after doesn't work with old internet explorer.
+
+1. appendChild
+const ul = document.querySelector(".todo-list");
+const li = document.createElement("li");
+li.textContent ="new todo";
+ul.appendChild(li);
+
+2. insertBefore
+const ul = document.querySelector(".todo-list");
+const li =document.createElement("li");
+li.textContent = "new todo";
+const referenceNode = document.querySelector(".list");
+ul.insertBefore(li ,  referenceNode);
+
+3. replaceChild
+const ul = document.querySelector(".todo-list");
+const li =document.createElement("li");
+li.textContent = "new todo";
+const referenceNode = document.querySelector(".list");
+ul.replaceChild(li ,  referenceNode);
+
+4. removeChild
+const ul = document.querySelector(".todo-list");
+const referenceNode = document.querySelector(".list");
+ul.removeChild(referenceNode);
+
+
+//Static list vs live list
+
+->> querySelector gives us static list so nodelist are static list
+->> getElementBySomething gives us live list HTMLElemets are live list
+
+//static list
+const listItems = document.querySelectorAll(".todo-list li");
+const Todo2 = document.createElement("li");
+Todo2.textContent = "Todo2";
+const ul = document.querySelector(".todo-list");
+ul.append(Todo2);
+console.log(listItems);
+
+//live list
+const ul = document.querySelector(".todo-list");
+const listItem = ul.getElementsByTagName("li");
+const Todo2 = document.createElement("li");
+Todo2.textContent = "Todo2";
+ul.append(Todo2);
+console.log(listItem);
+
+
+//How to get Dimensions of element(getBoundingClientRect())
+//Dimensions like height, width, top etc.
+
+const sectionTodo = document.querySelector(".todo-section");
+const info = sectionTodo.getBoundingClientRect();
+console.log(info);
+
+//MDN Event reference to see all the availabe event
+//Intro to events
+// Events like click, button press, mouseover
+//There are three ways to add event 
+
+* click 
+//There are three ways to add event
+1. Add event as a attribute in an element :-
+In the above example we have gave onclick event as an attribute and inside the string we can write our Js code
+
+<button class="btn btn-headline" onclick="console.log('you clicked Me')">Learn More</button>
+
+2. In the Js file we can select that element on which we want to add the event:-
+
+for example:-
+const btn = document.querySelector(".btn-headline");
+btn.onclick = function(){
+   console.log("You Clicked Me");
+}
+
+3. Third way is by using a method called addEventListener
+
+const btn = document.querySelector(".btn-headline");
+function clickMe(){
+   console.log("You clicked Me!!");
+}
+btn.addEventListener("click", clickMe);
+
+               Or
+const btn = document.querySelector(".btn-headline");
+btn.addEventListener("click", function clickMe(){
+   console.log("You clicked Me!!");
+});
+
+               Or
+const btn = document.querySelector(".btn-headline");
+btn.addEventListener("click", ()=>{
+   console.log("You clicked Me!!");
+});               
+
+*this keyword
+
+//if this keyword is written inside anonymus function then it will print the element itself in which it is defined
+
+const btn = document.querySelector(".btn-headline");
+btn.addEventListener("click",function(){
+   console.log("You clicked Me!!!");
+   console.log("value of this");
+   console.log(this);//it will print that element on which the event listener has been applied i.e the button having class btn-headline
+})
+
+ // if this keyword is written inside Arrow function then it will print the window object
+
+const btn = document.querySelector(".btn-headline");
+btn.addEventListener("click",()=>{
+   console.log("You clicked Me!!!");
+   console.log("value of this");
+   console.log(this);//it will print the window object
+})
+
+//How to add click event on multiple button
+
+<div class="my-buttons">
+        <button>My button 1</button>
+        <button>My button 2</button>
+        <button>My button 3</button>
+</div>
+const allButtons = document.querySelectorAll(".my-buttons button");
+// console.log(allButtons);
+for(let button of allButtons){
+    button.addEventListener("click", function(){
+        console.log(this.textContent);//here this will point to the button on which we click and will print the content written on the button
+    })
+}
+
+//event object
+const firstButton = document.querySelector("#one");
+firstButton.addEventListener("click", function(){
+   console.log(this);
+})
+
+//keypress event(it is used to check throughout the webpage which key we have pressed)
+
+const body = document.body;
+body.addEventListener("keypress", (e)=>{
+   console.log(e.key);
+})
+
+
+//mouseover event
+
+const Button = document.querySelector(".btn-headline");
+Button.addEventListener("mouseover", ()=>{
+  console.log("mouseover event ocurred!!!");
+});
+
+Button.addEventListener("mouseleave", ()=>{
+   console.log("mouseLeave event occured!!!");
+});
+
+
+//Event Bubbling / event propagation
+
+const grandParent = document.querySelector(".grandparent");
+const Parent = document.querySelector(".parent");
+const child = document.querySelector(".child");
+const body= document.body;
+child.addEventListener("click", ()=>{
+    console.log("Bubble!!! child");
+})
+Parent.addEventListener("click", ()=>{
+    console.log("Bubble!!! parent");
+})
+grandParent.addEventListener("click", ()=>{
+    console.log("Bubble!!! grandParent");
+})
+body.addEventListener("click", ()=>{
+    console.log("Bubble!!! body");
+})
+
+//Event capturing :-it is done by setting third value of addEventListener true.
+const grandParent = document.querySelector(".grandparent");
+const Parent = document.querySelector(".parent");
+const child = document.querySelector(".child");
+const body= document.body;
+child.addEventListener("click", ()=>{
+    console.log("Capture!!! child");
+}, true)
+Parent.addEventListener("click", ()=>{
+    console.log("Capture!!! parent");
+}, true)
+grandParent.addEventListener("click", ()=>{
+    console.log("Capture!!! grandParent");
+}, true)
+body.addEventListener("click", ()=>{
+    console.log("Capture!!! body");
+}, true)
+
+//Event delegation:- we use this so that we don't have to write eventListener seperately for grandParent, parent and chile we just have to write one event listener and that will work for all
+
+-->
+const grandParent = document.querySelector(".grandparent");
+grandParent.addEventListener("click", ()=>{
+   console.log("you clicked me");
+})
+
+-->To only perform event on paticular i.e child we use event object which applies event listener on that which is being clicked as follow
+const grandParent = document.querySelector(".grandparent");
+grandParent.addEventListener("click", (e)=>{
+   console.log(e.target);
+})
+
+
+//prevent Default is use to prevent the page from being refresed
+const todoForm = document.querySelector(".todo-form");
+todoForm.addEventListener("submit", (e)=>{
+   e.preventDefault();
+   console.log("submit event");
+});
+
+
+//Asynchronous Javascript
+
+* Syncronous Programming Vs Asynchronous
+Programming
+
+//Synchronous programming:- It is a programming in which until and unless one task in not completed other task can't start. Any event which act as a blocking event and furthure code gets blocked due to it.
+Note:- Js is a syncronous programming and is single threaded 
+
+console.log("script start");//Firstly this line of code will be executed 
+
+for(let i=1; i<1000; i++){  //After completion of first line this for loop will be executed and until and unless this for loop is not executed completely next line will not be executed.
+   console.log("inside for loop");
+}
+
+console.log("Script end");//After complete execution of for loop this line will be executed.
+
+//Before understanding Asynchronous Js lets understand about a function called setTimeout
+
+*setTimeout:- This method takes two parameter a function as its first parameter and second parameter will be the time i.e after how much time the function will be executed. (the time is given in Miliseconds(1000Ms = 1s)). SetTimeout is not provided by Javascript it is provided by Web browser.
+
+To uderstand how Js execute setTimeout method refer to fig4 of image folder.
+
+Note:- any thing written in setTimeout method will be executed after the execution of whole JS code.
+
+(Event loop :-the work of event loop is to check whether the call stack is free or working on some code. If call stack is not free then then anything present in callback queue have to wait until the call stack doesn't get free.)
+
+example:-
+console.log("script start");//Firstly this line of code will be executed 
+function hello(){//After completion of line 14 this function will be executed 
+   console.log("Hello World!!");
+}
+setTimeout(hello, 1000);
+console.log("script end");//After completion of line 9 this line will be executed not line no. 10 because we have used setTimeout method due to which the hello function will be executed after a delay of 1sec
+
+example:-
+console.log("script start");
+setTimeout(()=>{
+    console.log("inside setTimeout");
+}, 1000);
+console.log("script End");
+
+
+example:-
+console.log("script start");//first this line will be printed on console.then as the setTimeout method is a method that is executed by browser so that part will be sent to browser for execution and till then next line of js code will be executed i.e for loop but as setTimeout function is set to 0ms so the browser will send the callback function to JS code but still the settimeout will wait in the call back queue as Js is busy in execution of for loop and as the for loop will be executed last line will be executed and ion the console script end will be printed and then the call back will be executed and on console the inside setTimeout will be printed.
+setTimeout(()=>{
+    console.log("inside setTimeout");
+}, 0);
+for(let i=0; i<100; i++){
+   console.log("....");
+}
+console.log("script End");
+
+Note:- setTimeout method gives us a id if we print setTimeout on console. what is the use of this id. suppose we don't want to execute what ever is there inside the setTimeout method the we can make use of id as follow:-
+
+console.log("script start");
+const id = setTimeout(()=>{
+    console.log("inside for loop");
+ }, 1000);
+
+ for(i=0; i<100; i++){
+    console.log("...");
+ }
+ console.log("setTimeout id",id);
+ console.log("clear setTimeout");
+ clearTimeout(id);
+ console.log("script end");
+ 
+ as we can see that id can be used to stop the execution of setTimeout method by using clearTimeout method and passing that method the value of id. 
+ output of above code will be:-
+            script start
+            100 ...
+            setTimeout id 1
+            clear setTimeout
+            script end
+--> Clear timeout :- It is used to stop the execution of whatever is written inside the settimeout method. 
+syntax -> ClearTimeout(id);
+
+*setInterval :- setInterval is same as setTimeout. Settimeout was calling our function only one time after the time that we have specified. SetInterval calls the function again and again after some specified time.
+
+example:-
+console.log("Script Start");
+setInterval(()=>{
+    console.log(Math.random());
+},1000)
+console.log("Script end");
+
+--> Clear Interval :- It is used to stop the execution of whatever is written inside the setInterval method. 
+syntax -> ClearInterval(id);
+
+* Callback:-
+
+example 1:-
+function myFunc(callback){
+   console.log("Function is doing task 1");
+   callback();
+}
+
+myFunc(()=>{
+   console.log("function is doing task 2");
+});
+
+example2:-
+function getTwoNumbersAndAdd(number1, number2, isSuccess, isFail){
+   if(number1==='number' && number2==='number'){
+      isSuccess(number1, number2);
+   }
+   else{
+      isFail();
+   }
+}
+function addTwoNumbers(num1, num2){
+   console.log(num1 + num2);
+}
+function fail(){
+   console.log("Wrong Datatype");
+   console.log("please Enter numbers only");
+}
+getTwoNumbersAndAdd(4, 5, addTwoNumbers, fail);
+
+* callback hell , the pyramid of DOM
+--> Callback hell :-
+
+
+
+AJAX:-
+It stands for Asynchronous Javascript and XML
+
+XML is a data formate.
+
+Now we are going to learn how to do HTTP Request.
+Meaning of HTTP Request:- As we know that browser is a client and at backend we have a server now through HTTP request we are requesting server . So the communication between client and server takes place with the help of HTTP. HTTP stands for Hyper text transfer Protocol.
+
+AJAX:- It is a set of Web development techniques which uses web technologies on the client-side to create asynchronous web applications.
+For example:-
+Suppose we have to read some data or we can say we have to get some data from the server then we can perform HTTP request and this requesting is done in asyncronous manner.
+
+* with Ajax web applications can sent and retrieve data from a server asynchronously (in the background) without interfering with the display and behavious of the  existing page. that means without reloading the whole page we can perform some task on webpage in the background.
+
+Note:- we don't use data in XML Formate anymore we use JSON now.
+
+* weh have 3 most common ways to create and send request to server :-
+1. XMLHTTPRequest (old way of doing)
+2. fetch API(new way of doing)
+3. axios(this is third party library)
+
+
+

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CSS LEarning starts here</title>
+    <!--Type of Selectors
+      # By Tag Name like H1 tag, table tag, p tag etc
+      # Class selector Forexample .classname
+      # ID selector Forexample #IDName
+      # Descendant Selector for example #IDName Tagname(#header a{ })
+
+      difference between class and Id is that we can only use ID onetime in a web page whereas we can use a class multiple time in a webpage
+     -->
+
+      <!-- 
+    CSS Border properties
+     *Border-width
+     *Border-style like solid, Dotted, Dashed, Double, Groove, Ridge, Inset, Outset, None, Mix
+     *Border-color
+
+     CSS Border Shorthand
+    { border-width:2px;
+     border-style:solid;
+     border-color:red;}----  ----this can also be written in shortform  as follow
+     ........border:2px solid red;
+
+     CSS Border Side(only provide border as specified in left right top or bottom)
+     *Border-top
+     *Border-right
+     *border-bottom
+     *border-left
+     -->
+
+     <!-- 
+         CSS Outline Properties(outline is a box outside border)
+         *outline-width
+         *outline-style
+         *Outline-color
+         *outline-offset
+         
+         CSS Outline shorthand
+         outline:2px solid red;
+      -->
+
+      <!-- 
+          CSS Padding properties (gap between text and border is called padding )
+           *Padding-top
+           *padding-right
+           *padding-bottom
+           *padding-left
+
+           CSS padding shorthand
+           {Padding-top:10px;
+           padding-right:10px;
+           padding-bottom:10px;
+           padding-left:10px;}
+              or
+           padding:10px;(if padding form all side are same then this shorthand is used)
+
+           padding:10px 20px 15px 25px;(if padding from all side are different then this shorthand is used top right bottom left)
+       -->
+
+       <!-- 
+           Margin (gap between the elements of the webpage is called margin)
+           CSS Margin Properties
+           *Margin-top
+           *Margin-right
+           *Margin-bottom
+           *Margin-left
+
+           CSS Margin Shorthand
+           Margin:10px;(if margin form all side are same then this shorthand is used)
+          
+           Margin:10px 20px 30px 40px;(if margin form all side are different then this shorthand is used)
+
+           margin:10px auto; (10px is for top, bottom and auto is for left,right which automatically take margin according to width provided to the div tag )
+       -->
+
+       <!-- 
+           CSS Height and width
+           Horizontal axis is width -- the value of width can be in pixel(if we want fixed layout) or in percentage(it is a type of liquid layout i.e it takes the width according to the screen size or according to the parent layout)
+           Vertical axiz is height -- the value of height can only be given in pixel 
+
+
+           Min height & Max height ---to overcome the problem of content overflow in height we use min height and max height
+
+           min-width & max-width--- is used to make responsive webpages
+            /* min width jo hai hum use karte for fixing the size of container and max-width given px ke baad adjust karta khud */
+            /* min-height adjust karta after given px and max-height fix the size of container */
+        -->
+        <!-- 
+            Box sizing 
+
+            It came into existence due to a problem lets first understand the problem the problme was that by adding border and padding the width of the DIV tag changes suppose we have a DIV of size 200px and we added a border of 10px to that DIV and a padding of 10px from left and right then the width of DIV will increase and become 240px so to over come this we use BOX-Sizing 
+
+
+            Box sizing only have two values  
+            After using box sizing the width of the div tag will not change and will remain save as 200px even after adding the padding and the border
+
+            Box-sizing: border-box;----here in this case width will not change
+            Box-sizing:- content-box; ---here in this case width will change
+         -->
+
+         <!-- 
+             Overflow
+             Actually this overflow is a problem in this when we fix the size of the div tag or the container then the content of the Div get overflowed so when the data is overflowing then we make use of Overflow property.
+             
+             To handel the data overflow problem we make use of properties of overflow
+             1.Hidden --- we hide the data that is getting overflowed
+             2.Scroll--- we make use of scroll bar we so that the data hich is getting overflowed can be seen by scrolling the bar
+             3.Auto--- when the data is getting overflowed the a scroll bar automatically appears both horizontally and vertically if the data is getting overflowed horizontally then a horizontal bar comes and if the is getting overflowed vertically then a vertical bar comes.
+             4.Visible--- the data which is getting overflowed will be visible as it is
+
+             there are 3type of overflow properties
+             1. overflow ---it works in every case either the data is getting overflowed horizontally or vertically
+             2. overflow-x---it is used to tackel the data overflow that occurs horizontally
+             2.overflow-y----it is used to tackel the data overflow that occurs vertically
+        -->
+
+        <!-- 
+            Border radius -- Most of the time the corner border are sharp but we can also customize the border according to our need by using this border radius. the value of this can be in pixel and as well as in %. To make any border circular we have to give same width and height to the container and then the value to 50%.
+            for ex:- {
+                width:150px;
+                height:150px;
+                border-radius:50%;
+            }
+
+            Border Radius properties
+            1. Border-top-left-radius 
+            2. Border-top-right-radius
+            3. Border-bottom-right-radius
+            4. Border-bottom-left-radius
+
+            short-hand for this is 
+            Border-radius:10px 20px 30px 40px;
+        -->
+        <!-- 
+            Box-Shadow it is used to give shadow to the Box.
+            
+        *box-shadow:h-offset v-offset blur spread color;
+           1. h-offset--- it is used to give shadow to the left and right of the box
+           2. v-offset---it is used to give shadow to the top and bottom of the box
+           3. blur--- more the value of blur more the blur shadow will be 
+           4. spread---to what extent the shoadow is to be spreaded if value is 10px suppose then that means from the text box the shadow will be spreaded to 10px.
+            color---
+
+         *box-shadow:h-offset v-offset blur spread color inset;
+         inset--- is is used to give border inside the box
+
+         -->
+
+     <style>
+         h1{
+             /* border-width:2px;
+             border-style:Dashed;
+             border-color:green; */
+
+             /* or */
+
+             border: 4px Dashed green;
+             outline: 4px Solid red;
+             outline-offset:6px;
+             border-radius:70px;
+            }
+         p{
+             border:4px Solid red;
+             margin:20px;
+             padding:20px;
+             max-width:1170px; 
+             min-height:100px;
+             box-sizing:border-box;
+             box-shadow:6px 6px 3px 0px red,12px 12px 3px 0px green;
+            }
+         .Padding{
+             border:4px solid blue;
+             background-color:salmon;
+             margin-left:200px 100px 100px 100px;
+             box-sizing:border-box;
+             min-height:150px;
+             padding:10px;
+             Margin:20px;
+             box-sizing:border-box;
+             box-shadow:6px 6px 3px 0px blue,12px 12px 3px 0px aqua;
+         }
+
+         #Learn{
+             border:4px solid black;
+             max-width:1160px;
+             padding:10px;
+             margin:20px;
+             box-sizing:border-box;
+             box-shadow:3px 3px 4px black inset;
+         }
+         img{
+            width:100%;
+         }
+         #box{
+             border:4px solid black;
+             max-width:1153px;
+             height:100px;
+             margin:20px;
+             overflow:auto;
+             box-shadow:3px 3px 4px black inset;
+            }
+        
+     </style>
+
+
+</head>
+<body>
+    <!-- Type of css
+          1. Inline CSS
+          2. Inpage Css
+          3. External Css
+    -->
+    <!--WebSafeColors.info :- It is used to see the hexadecimal code for any color -->
+
+    <!-- Here I learned about inline Css -->
+    <h1 style="color:Blue; background-color:aqua;text-align:center;">MY first day in CSS Learning</h1>
+
+    <p style="color:green;background-color:aqua" class="center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, corrupti? Repellendus aut quasi quis enim dolores cum pariatur voluptatum voluptate, aliquam, corporis quia quas vel aspernatur odio, sapiente blanditiis et libero nostrum cupiditate possimus. Tempore omnis iusto exercitationem adipisci architecto? Nam officia earum nemo fugit nostrum perferendis alias quam rerum iure sapiente cupiditate in dolorum iusto, sequi, saepe distinctio recusandae id quidem! Numquam nesciunt excepturi repellendus asperiores dolore sequi vel aspernatur aperiam sunt quod, ducimus ad placeat, unde in ut odit. Animi vero totam ipsam, et odio adipisci. Ipsam quas nesciunt assumenda vel dolorem. Quod delectus sapiente nobis aliquid ipsam.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui, voluptatem labore molestiae quaerat debitis omnis. Exercitationem odit ex eligendi distinctio eum inventore iure? Amet eum repudiandae itaque totam dolor quos nesciunt odio inventore laboriosam esse blanditiis magnam nobis tempora enim, doloribus exercitationem odit debitis saepe reprehenderit? Officiis voluptates, vero fugit labore eos explicabo ducimus, placeat laboriosam similique deserunt ex quis aliquam provident quibusdam? Veritatis, animi? Repudiandae distinctio dolor voluptatibus, qui iusto labore obcaecati nam. Suscipit eligendi assumenda minus laborum, ad ut, ipsam alias nesciunt quae non aliquid esse unde possimus, excepturi magnam repudiandae voluptas! Alias cupiditate ex fugiat non, quae minima rem illum temporibus eius. 
+    </p>
+    <p style="color:purple; background-color:aqua" class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus, culpa nihil. Ipsam temporibus sed a explicabo quo harum autem. Earum similique ipsum incidunt magnam porro deleniti neque illo labore nesciunt libero saepe vitae accusantium atque dolore amet maxime voluptatem, voluptas fugit obcaecati ab! Iste, quos, nesciunt aut aliquam perferendis qui voluptatibus numquam placeat nostrum sapiente harum et dicta molestias. Vitae odio accusantium perferendis perspiciatis autem quos maiores rerum, quaerat repellat!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae velit quas natus odit, recusandae placeat provident nisi animi omnis pariatur dignissimos magnam expedita in veniam nesciunt sequi iste, libero dolorum eveniet doloremque! Itaque veritatis natus incidunt harum non, voluptatem porro autem dolor repellat sint tenetur tempore consequuntur neque ipsam modi. Veritatis voluptas dicta vero nam harum quas perspiciatis sit necessitatibus repudiandae sequi molestias quos ratione animi explicabo nulla, at blanditiis eius quis delectus! Suscipit voluptatibus non ullam obcaecati facilis alias labore! Perferendis fuga cum exercitationem voluptas assumenda reiciendis eos, voluptatibus omnis mollitia rerum, cupiditate eaque quos ipsam distinctio ducimus perspiciatis.</p>
+
+    <div class="Padding">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo qui fugiat voluptate labore ipsum unde eligendi, minima veritatis repellendus, atque, consequuntur architecto. Deleniti voluptates assumenda architecto. Vero ex laborum animi. Voluptatem quasi eos nostrum! Ut facere illum est tempora dolores doloribus cupiditate, possimus ex obcaecati perspiciatis. Modi explicabo iure nam, molestias quasi rerum id aliquid dicta veritatis impedit, fuga quos numquam et molestiae tenetur maiores porro quas ex voluptatem nulla soluta hic ab perferendis. Quas voluptatum modi placeat voluptas est iusto ex accusantium consectetur enim provident, suscipit optio, corrupti amet illum neque. Harum commodi, aliquid deserunt amet eligendi sit aperiam.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui amet nulla eius atque cupiditate, at eos aliquam veniam magni ea excepturi commodi suscipit possimus quis dolor perspiciatis! Porro, dolores alias!
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste natus error omnis vero explicabo expedita magni amet nesciunt itaque, ipsum laudantium. Incidunt porro rerum recusandae alias? Odit cumque iusto pariatur error, esse consectetur! Iste alias possimus quia doloremque ullam praesentium delectus ipsa tempore, error quae corrupti asperiores, est, deleniti maxime. Inventore numquam praesentium suscipit fugit rem aspernatur laborum tempora eos? Temporibus aperiam harum iure atque quibusdam voluptate aliquid eos vitae rem, ratione, iste aliquam doloremque ullam maiores at nihil velit, cum accusamus blanditiis fuga assumenda? Labore, ducimus voluptatem dignissimos, beatae at voluptatum iure exercitationem sed unde nemo deleniti quos eos.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure aliquam odio sequi iste. Saepe, tempore molestias sed enim provident autem at accusamus cupiditate, vel voluptate consequatur vero nam obcaecati reiciendis, eius ipsam ipsa exercitationem atque eaque iusto.
+    </div>
+    <div id="Learn"> 
+        <img src="anime.jpg">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium harum aliquid culpa repellat sapiente totam natus magni ipsa eum nostrum nemo ea a excepturi soluta esse, deserunt dolorum non officia illo sed dolores? Aut esse ipsa, deserunt similique magnam modi tempora! Hic ducimus accusamus magni amet quas temporibus sapiente, cum iusto id assumenda aliquid qui sint numquam officiis neque consequatur adipisci, odio delectus ad tempora aliquam atque! Harum voluptatibus placeat dolorem voluptates officiis in nulla nihil autem minus quas architecto aperiam iusto nobis velit, iure totam. Cumque mollitia nisi modi rem pariatur eaque cupiditate aliquam, quasi molestiae blanditiis labore doloribus?
+    </div>
+    <div id="box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum expedita dolorem, magni deleniti, possimus sapiente earum explicabo incidunt quas libero totam inventore, ea quisquam. Fuga ex necessitatibus atque officiis, et, aspernatur natus facere exercitationem dolorum quos quis sint a magnam quo ullam iusto perspiciatis temporibus esse ipsa hic. Voluptatum provident maxime eaque eveniet culpa quasi soluta vel officiis similique odio quaerat molestias repellendus fugiat reprehenderit accusantium nostrum eius, rem modi mollitia porro dicta eligendi asperiores enim.Exercitationem laboriosam consequatur natus harum repellat sed sequi nam culpa tempora ipsum in nesciunt vitae repudiandae cupiditate, similique inventore sapiente consectetur qui ipsa maiores?Exercitationem laboriosam consequatur natus harum repellat sed sequi nam culpa tempora ipsum in nesciunt vitae repudiandae cupiditate, similique inventore sapiente consectetur qui ipsa maiores?Exercitationem laboriosam consequatur natus harum repellat sed sequi nam culpa tempora ipsum in nesciunt vitae repudiandae cupiditate, similique inventore sapiente consectetur qui ipsa maiores?Exercitationem laboriosam consequatur natus harum repellat sed sequi nam culpa tempora ipsum in nesciunt vitae repudiandae cupiditate, similique inventore sapiente consectetur qui ipsa maiores?Exercitationem laboriosam consequatur natus harum repellat sed sequi nam culpa tempora ipsum in nesciunt vitae repudiandae cupiditate, similique inventore sapiente consectetur qui ipsa maiores?Exercitationem laboriosam consequatur natus harum repellat sed sequi nam culpa tempora ipsum in nesciunt vitae repudiandae cupiditate, similique inventore sapiente consectetur qui ipsa maiores?Exercitationem laboriosam consequatur natus harum repellat sed sequi nam culpa tempora ipsum in nesciunt vitae repudiandae cupiditate, similique inventore sapiente consectetur qui ipsa maiores?Exercitationem laboriosam consequatur natus harum repellat sed sequi nam culpa tempora ipsum in nesciunt vitae repudiandae cupiditate, similique inventore sapiente consectetur qui ipsa maiores? 
+   </div>
+</body>
+</html>
